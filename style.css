@@ -30,13 +30,23 @@ body {
     transform: scale(1.05);
 }
 
-#semana1 {
-    background-color: #4CAF50;
+#week1 {
+    background-color: rgb(23, 208, 23);
     color: white;
 }
 
-#semana2 {
-    background-color: #2196F3;
+#week2 {
+    background-color: blue;
+    color: white;
+}
+
+#week3 {
+    background-color: red;
+    color: white;
+}
+
+#week4 {
+    background-color: rgb(205, 205, 2);
     color: white;
 }
 
