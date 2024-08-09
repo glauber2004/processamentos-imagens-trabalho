@@ -20,24 +20,24 @@ body {
     justify-content: center;
     align-items: flex-start;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 1100px;
 }
 
 .buttons {
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background-color: #fafafa;
+    border-radius: 10px;
     padding: 20px;
-    width: 220px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 240px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .buttons input[type="number"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
     font-size: 16px;
     border-radius: 4px;
@@ -52,7 +52,7 @@ body {
 
 .buttons button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     color: white;
     background-color: #4CAF50;
@@ -60,10 +60,20 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .buttons button:hover {
     background-color: #45a049;
+}
+
+.buttons p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 h2 {

@@ -14,6 +14,7 @@
             <input type="number" id="g1" min="0" max="255" placeholder="G" required>
             <input type="number" id="b1" min="0" max="255" placeholder="B" required>
             <button class="btn" type="button" onclick="normalize()">Normalizar RGB</button>
+            <p id="result"></p> <!-- Local para exibir o resultado -->
         </div>
         <!-- Converter RGB -->
         <div class="buttons">
@@ -21,6 +22,7 @@
             <input type="number" id="g2" min="0" max="255" placeholder="G" required>
             <input type="number" id="b2" min="0" max="255" placeholder="B" required>
             <button class="btn" type="button" onclick="convertRGB()">Converter RGB</button>
+            <p id="resultRGB"></p> <!-- Local para exibir o resultado -->
         </div>
         <!-- Converter HSV para RGB -->
         <div class="buttons">
@@ -28,6 +30,7 @@
             <input type="number" id="s" min="0" max="100" placeholder="S" required>
             <input type="number" id="v" min="0" max="100" placeholder="V" required>
             <button class="btn" type="button" onclick="convertHSV()">Converter HSV para RGB</button>
+            <p id="resultHSV"></p> <!-- Local para exibir o resultado -->
         </div>
         <!-- Converter CMYK para RGB -->
         <div class="buttons">
@@ -36,6 +39,7 @@
             <input type="number" id="y" min="0" max="100" placeholder="Y" required>
             <input type="number" id="k" min="0" max="100" placeholder="K" required>
             <button class="btn" type="button" onclick="convertCMYK()">Converter CMYK para RGB</button>
+            <p id="resultCMYK"></p> <!-- Local para exibir o resultado -->
         </div>
     </div>
     <script src="week1.js"></script>
