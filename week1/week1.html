@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversão numéricas</title>
+    <title>Conversão Numéricas</title>
+    <link rel="stylesheet" href="week1.css">
 </head>
-<body>            
-</select>
+<body>
+    <div class="convert">
+        <!-- Normalizar RGB -->
+        <div class="buttons">
+            <input type="number" id="r1" min="0" max="255" placeholder="R" required>
+            <input type="number" id="g1" min="0" max="255" placeholder="G" required>
+            <input type="number" id="b1" min="0" max="255" placeholder="B" required>
+            <button class="btn" type="button" onclick="normalize()">Normalizar RGB</button>
+        </div>
+        <!-- Converter RGB -->
+        <div class="buttons">
+            <input type="number" id="r2" min="0" max="255" placeholder="R" required>
+            <input type="number" id="g2" min="0" max="255" placeholder="G" required>
+            <input type="number" id="b2" min="0" max="255" placeholder="B" required>
+            <button class="btn" type="button" onclick="convertRGB()">Converter RGB</button>
+        </div>
+        <!-- Converter HSV para RGB -->
+        <div class="buttons">
+            <input type="number" id="h" min="0" max="360" placeholder="H" required>
+            <input type="number" id="s" min="0" max="100" placeholder="S" required>
+            <input type="number" id="v" min="0" max="100" placeholder="V" required>
+            <button class="btn" type="button" onclick="convertHSV()">Converter HSV para RGB</button>
+        </div>
+        <!-- Converter CMYK para RGB -->
+        <div class="buttons">
+            <input type="number" id="c" min="0" max="100" placeholder="C" required>
+            <input type="number" id="m" min="0" max="100" placeholder="M" required>
+            <input type="number" id="y" min="0" max="100" placeholder="Y" required>
+            <input type="number" id="k" min="0" max="100" placeholder="K" required>
+            <button class="btn" type="button" onclick="convertCMYK()">Converter CMYK para RGB</button>
+        </div>
+    </div>
+    <script src="week1.js"></script>
 </body>
 </html>

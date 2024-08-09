@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #f2c0f5;
 }
 
 .container {
@@ -46,7 +46,7 @@ body {
 }
 
 #week4 {
-    background-color: rgb(205, 205, 2);
+    background-color:yellow;
     color: white;
 }
 
