@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
 }
 
 .convert {
@@ -23,16 +24,18 @@ body {
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    max-width: 1100px;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .buttons {
     background-color: #fafafa;
     border-radius: 10px;
     padding: 20px;
-    width: 240px;
+    width: calc(33.333% - 40px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    min-width: 250px;
 }
 
 .buttons input[type="number"] {
