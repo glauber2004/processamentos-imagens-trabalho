@@ -1,19 +1,19 @@
 // Normalizar valor RGB
-function normalize() {
+function norm(){
     let r = parseFloat(document.getElementById('r1').value);
     let g = parseFloat(document.getElementById('g1').value);
     let b = parseFloat(document.getElementById('b1').value);
-    
+
     if (isNaN(r) || isNaN(g) || isNaN(b)) {
-        document.getElementById('resultNormalize').innerText = "Por favor, insira todos os valores RGB.";
+        document.getElementById('resultNorm').innerText = "Por favor, insira todos os valores RGB.";
         return;
-    } 
+    }
 
     let Rnorm = r / 255;
     let Gnorm = g / 255;
     let Bnorm = b / 255;
-    
-    document.getElementById('resultNormalize').innerText = `Normalizado: R=${Rnorm.toFixed(2)}, G=${Gnorm.toFixed(2)}, B=${Bnorm.toFixed(2)}`;
+
+    document.getElementById('resultNorm').innerText = `Normalizado: ${Rnorm.toFixed(2)}, ${Gnorm.toFixed(2)}, ${Bnorm.toFixed(2)}`
 }
 
 // Converter valor RGB para Escala de cinza
