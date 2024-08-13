@@ -9,9 +9,9 @@ function norm(){
         return;
     }
 
-    let Rnorm = r / 255;
-    let Gnorm = g / 255;
-    let Bnorm = b / 255;
+    let Rnorm = r / (r+g+b);
+    let Gnorm = g / (r+g+b);
+    let Bnorm = b / (r+g+b);
 
     document.getElementById('resultNorm').innerText = `Normalizado: ${Rnorm.toFixed(2)}, ${Gnorm.toFixed(2)}, ${Bnorm.toFixed(2)}`
 }
@@ -83,7 +83,7 @@ function convertRGBcmyk() {
     let m = (1 - g - k) / (1 - k);
     let y = (1 - b - k) / (1 - k);
 
-    document.getElementById('resultRGBCMYK').innerText = `C: ${(c * 100).toFixed(2)}, M: ${(m * 100).toFixed(2)}, Y: ${(y * 100).toFixed(2)}, K: ${(k * 100).toFixed(2)}`;
+    document.getElementById('resultRGBCMYK').innerText = `C: ${(c * 100).toFixed(2)}%, M: ${(m * 100).toFixed(2)}%, Y: ${(y * 100).toFixed(2)}%, K: ${(k * 100).toFixed(2)}%`;
 }
 
 // Converter HSV para RGB
