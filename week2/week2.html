@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversões Imagens</title>
+    <title>Escala de Cinza</title>
     <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/png/A.png">
     <link rel="stylesheet" href="week2.css">
 </head>
 <body>
+
+    <div class="container">
+        <h1>Conversão de Imagem para Escala de Cinza</h1>
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <div class="canvas-wrapper">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="grayCanvas" class="canvas"></canvas>
+        </div>
+        <button onclick="convertToGrayScale()" class="convert-button">Converter para Escala de Cinza</button>
+    </div>
 
     <script src="week2.js"></script>
 </body>
