@@ -1,14 +1,10 @@
-function processImages() {
-    const image1 = document.getElementById('image1').files[0];
-    const image2 = document.getElementById('image2').files[0];
+document.getElementById('image1').addEventListener('change', function() {
+    loadImageAndLogRGB(this.files[0], 'Image 1', 'displayImage1');
+});
 
-    if (image1 && image2) {
-        loadImageAndLogRGB(image1, 'Image 1', 'displayImage1');
-        loadImageAndLogRGB(image2, 'Image 2', 'displayImage2');
-    } else {
-        console.log("Por favor, selecione duas imagens.");
-    }
-}
+document.getElementById('image2').addEventListener('change', function() {
+    loadImageAndLogRGB(this.files[0], 'Image 2', 'displayImage2');
+});
 
 function loadImageAndLogRGB(imageFile, label, displayId) {
     const reader = new FileReader();
