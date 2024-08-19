@@ -126,3 +126,17 @@ function subtractImages() {
     resultImageData.data.set(subtractedData);
     resultCtx.putImageData(resultImageData, 0, 0);
 }
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const resultCanvas = document.getElementById('resultCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = resultCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'novaimagem.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
