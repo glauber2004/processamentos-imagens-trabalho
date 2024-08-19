@@ -6,5 +6,23 @@
     <title>Week4</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Aumentar atributos da Imagem</h1>
+        <!-- Carregar a imagem-->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <!-- Tratamento da imagem-->
+        <div class="canvas-wrapper">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="grayCanvas" class="canvas"></canvas>
+        </div>
+        <!-- Botão de converter -->
+        <button onclick="convertToGrayScale()" class="convert-button">Converter para Escala de Cinza</button>
+    </div>
+    <!-- Voltar a tela inicial-->
+    <div class="start" id="button-start">
+        <a href="/processamentos-imagens-trabalho/index.html">
+            <h2>Voltar ao Início</h2>
+        </a>
+    </div>
 </body>
 </html>

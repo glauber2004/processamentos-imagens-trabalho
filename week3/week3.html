@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Duas Imagens</title>
     <link rel="stylesheet" href="week3.css">
 </head>
 <body>
-
+    <!-- Carregar as imagens-->
     <h2>Carregar e Processar Duas Imagens</h2>
         <input type="file" id="image1" accept="image/*">
         <input type="file" id="image2" accept="image/*">
-
+    <!-- Mostrar as imagens escolhidas-->
     <div id="images-container">
         <h3>Imagens Carregadas:</h3>
         <img id="displayImage1" alt="Image 1">
         <img id="displayImage2" alt="Image 2">
     </div>
-
+    <!-- Botões para somar e subtrair-->
+    <button onclick="sumImages()">Somar Imagens</button>
+    <button onclick="subtractImages()">Subtrair Imagens</button>
+    <canvas id="resultCanvas"></canvas>
+    <!-- Voltar a tela inicial-->
     <div class="start" id="button-start">
         <a href="/processamentos-imagens-trabalho/index.html">
             <h2>Voltar ao Início</h2>
         </a>
     </div>
-
 <script src="week3.js"></script>
 </body>
 </html>
