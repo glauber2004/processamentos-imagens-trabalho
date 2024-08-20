@@ -1,0 +1,11 @@
+.images-container {
+    margin-top: 20px;
+}
+.displayImage1 {
+    max-width: 300px; 
+    margin-right: 20px;
+}
+
+.displayImage2 {
+    max-width: 300px;
+}

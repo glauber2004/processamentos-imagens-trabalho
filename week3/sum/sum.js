@@ -40,28 +40,6 @@ function loadImageAndLogRGB(imageFile, label, displayId) {
             } else {
                 image2Data = data;
             }
-
-            // Criar matrizes R, G, B
-            let redMatrix = [];
-            let greenMatrix = [];
-            let blueMatrix = [];
-
-            for (let i = 0; i < img.height; i++) {
-                redMatrix[i] = [];
-                greenMatrix[i] = [];
-                blueMatrix[i] = [];
-                for (let j = 0; j < img.width; j++) {
-                    const index = (i * img.width + j) * 4;
-                    redMatrix[i][j] = data[index];     // R
-                    greenMatrix[i][j] = data[index + 1]; // G
-                    blueMatrix[i][j] = data[index + 2]; // B
-                }
-            }
-
-            // Mostrar as matrizes R, G, B no console
-            console.log(`${label} - Matriz Red (R):`, redMatrix);
-            console.log(`${label} - Matriz Green (G):`, greenMatrix);
-            console.log(`${label} - Matriz Blue (B):`, blueMatrix);
         };
     };
     reader.readAsDataURL(imageFile);
@@ -79,10 +57,11 @@ function sumImages() {
 
     //laço de repetição para percorrer e somar os pixels
     for (let i = 0; i < image1Data.length; i += 4) {
-        summedData[i] = Math.min(image1Data[i] + image2Data[i], 255);       // R
-        summedData[i + 1] = Math.min(image1Data[i + 1] + image2Data[i + 1], 255); // G
-        summedData[i + 2] = Math.min(image1Data[i + 2] + image2Data[i + 2], 255); // B
-        summedData[i + 3] = 255; // Alpha
+        summedData[i] = Math.min(image1Data[i] + image2Data[i], 255);
+        summedData[i + 1] = Math.min(image1Data[i + 1] + image2Data[i + 1], 255);
+        summedData[i + 2] = Math.min(image1Data[i + 2] + image2Data[i + 2], 255);
+        summedData[i + 3] = 255;
+        //em ordem RGBA - A=alpha
     }
 
     //renderizar a nova imagem, resultado da soma
@@ -97,35 +76,6 @@ function sumImages() {
     resultCtx.putImageData(resultImageData, 0, 0);
 }
 
-//função subtrair
-function subtractImages() {
-    if (!image1Data || !image2Data) {
-        console.log("Imagens não carregadas corretamente.");
-        return;
-    }
-
-    // array pra manter valores (0 até 255)
-    const subtractedData = new Uint8ClampedArray(image1Data.length);
-
-    //laço de repetição para percorrer e subtrair os pixels
-    for (let i = 0; i < image1Data.length; i += 4) {
-        subtractedData[i] = Math.max(image1Data[i] - image2Data[i], 0);       // R
-        subtractedData[i + 1] = Math.max(image1Data[i + 1] - image2Data[i + 1], 0); // G
-        subtractedData[i + 2] = Math.max(image1Data[i + 2] - image2Data[i + 2], 0); // B
-        subtractedData[i + 3] = 255; // Alpha
-    }
-
-    //renderizar a nova imagem, resultado da subtração
-    const resultCanvas = document.getElementById('resultCanvas');
-    resultCanvas.width = image1Width;
-    resultCanvas.height = image1Height;
-    const resultCtx = resultCanvas.getContext('2d');
-
-    //mostrar a imagem nova
-    const resultImageData = resultCtx.createImageData(image1Width, image1Height);
-    resultImageData.data.set(subtractedData);
-    resultCtx.putImageData(resultImageData, 0, 0);
-}
 
 //função para baixar a nova imagem 
 function downloadImage() {
@@ -134,7 +84,7 @@ function downloadImage() {
 
     //converter canvas para URL
     downloadLink.href = resultCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'novaimagem.jpg';
+    downloadLink.download = 'imagem_somada.jpg';
     downloadLink.click();
 }
 

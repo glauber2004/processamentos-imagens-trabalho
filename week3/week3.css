@@ -1,11 +1,51 @@
-.images-container {
-    margin-top: 20px;
-}
-.displayImage1 {
-    max-width: 300px; 
-    margin-right: 20px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2c0f5;
 }
 
-.displayImage2 {
-    max-width: 300px;
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#sum {
+    background-color: rgb(23, 208, 23);
+    color: white;
+}
+
+#subtract {
+    background-color: blue;
+    color: white;
+}
+
+#index {
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
