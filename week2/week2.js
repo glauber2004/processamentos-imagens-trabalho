@@ -52,3 +52,17 @@ window.onload = function() {
         grayContext.putImageData(imageData, 0, 0);
     };
 }
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const grayCanvas = document.getElementById('grayCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = grayCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'novaimagem.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
