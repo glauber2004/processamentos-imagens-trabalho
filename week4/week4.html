@@ -9,10 +9,10 @@
     <div class="container">
         <h1>Aumentar atributos da Imagem</h1>
         <!-- Carregar a imagem-->
-        <input type="file" id="image" accept="image/*">
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
         <!-- Tratamento da imagem-->
-        <div id="image-container">
-            <img id="displayImage" alt="Image">
+        <div class="canvas-image">
+            <canvas id="originalCanvas" class="canvas"></canvas>
         </div>
         <input type="range">
     </div>
@@ -22,5 +22,6 @@
             <h2>Voltar ao Início</h2>
         </a>
     </div>
+    <script src="week4.js"></script>
 </body>
 </html>
