@@ -83,7 +83,7 @@ function downloadImage() {
 
     //converter canvas para URL
     downloadLink.href = resultCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'imagem_subtraida.jpg';
+    downloadLink.download = 'image_subtract.jpg';
     downloadLink.click();
 }
 

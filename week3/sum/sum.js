@@ -84,7 +84,7 @@ function downloadImage() {
 
     //converter canvas para URL
     downloadLink.href = resultCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'imagem_somada.jpg';
+    downloadLink.download = 'image_sum.jpg';
     downloadLink.click();
 }
 

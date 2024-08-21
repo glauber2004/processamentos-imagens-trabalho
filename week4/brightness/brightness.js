@@ -32,7 +32,7 @@ window.onload = function() {
     function adjustBrightness(value) {
         if (!originalImageData) return;
 
-        //imagem alterada
+        //cópia
         let imageData = new ImageData(new Uint8ClampedArray(originalImageData.data), originalImageData.width, originalImageData.height);
         let data = imageData.data;
 
