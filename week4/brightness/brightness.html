@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brilho</title>
+    <link rel="stylesheet" href="brightness.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Alterar Brilho da Imagem</h1>
+        <!-- Carregar a imagem-->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <!-- Tratamento da imagem-->
+        <div class="canvas-image">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+        </div>
+    </div>
+    <!-- Voltar a tela inicial-->
+    <div class="start" id="button-start">
+        <a href="/processamentos-imagens-trabalho/week4/week4.html">
+            <h2>Voltar</h2>
+        </a>
+    </div>
+    <script src="brightness.js"></script>
+</body>
+</html>
