@@ -1,26 +1,53 @@
-//função de carregamento da imagem
 window.onload = function() {
     let originalCanvas = document.getElementById('originalCanvas');
     let originalContext = originalCanvas.getContext('2d');
     let imageLoader = document.getElementById('imageLoader');
+    let brightnessValue = document.getElementById('brightnessValue');
+    let increaseBrightness = document.getElementById('increaseBrightness');
+    let decreaseBrightness = document.getElementById('decreaseBrightness');
+
+    let originalImageData = null;
 
     imageLoader.addEventListener('change', treatImage, false);
+    increaseBrightness.addEventListener('click', () => adjustBrightness(parseInt(brightnessValue.value)), false);
+    decreaseBrightness.addEventListener('click', () => adjustBrightness(-parseInt(brightnessValue.value)), false);
 
-    //função para ler a imagem fornecida
     function treatImage(changeEvent) {
-        let reader = new FileReader(); // objeto para conseguir base64
+        let reader = new FileReader();
         reader.onload = function(event) {
             let img = new Image();
             img.onload = function() {
-                //ajusta o tamanho dos canvas para o tamanho da imagem
                 originalCanvas.width = img.width;
                 originalCanvas.height = img.height;
-
-                //desenha a imagem original no primeiro canvas
                 originalContext.drawImage(img, 0, 0);
+
+                //imagem original
+                originalImageData = originalContext.getImageData(0, 0, originalCanvas.width, originalCanvas.height);
             }
             img.src = event.target.result;
         }
         reader.readAsDataURL(changeEvent.target.files[0]);
+    }
+
+    function adjustBrightness(value) {
+        if (!originalImageData) return;
+
+        //imagem alterada
+        let imageData = new ImageData(new Uint8ClampedArray(originalImageData.data), originalImageData.width, originalImageData.height);
+        let data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+            data[i] = clamp(data[i] + value);
+            data[i + 1] = clamp(data[i + 1] + value);
+            data[i + 2] = clamp(data[i + 2] + value);
+            data[i + 3] = 255;
+            //em ordem RGBA - A=alpha
+        }
+
+        originalContext.putImageData(imageData, 0, 0);
+    }
+
+    function clamp(value) {
+        return Math.max(0, Math.min(255, value));
     }
 }
