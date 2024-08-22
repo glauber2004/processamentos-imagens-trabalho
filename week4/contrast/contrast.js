@@ -9,8 +9,8 @@ window.onload = function() {
     let originalImageData = null;
 
     imageLoader.addEventListener('change', treatImage, false);
-    increaseContrast.addEventListener('click', () => adjustContrastIncrease(parseFloat(contrastValue.value)), false);
-    decreaseContrast.addEventListener('click', () => adjustContrastDecrease(parseFloat(contrastValue.value)), false);
+    increaseContrast.addEventListener('click', () => contrastIncrease(parseFloat(contrastValue.value)), false);
+    decreaseContrast.addEventListener('click', () => contrastDecrease(parseFloat(contrastValue.value)), false);
 
     function treatImage(changeEvent) {
         let reader = new FileReader();
@@ -29,7 +29,7 @@ window.onload = function() {
         reader.readAsDataURL(changeEvent.target.files[0]);
     }
 
-    function adjustContrastIncrease(value) {
+    function contrastIncrease(value) {
         if (!originalImageData || value <= 0) return;
 
         //cópia
@@ -47,7 +47,7 @@ window.onload = function() {
         originalContext.putImageData(imageData, 0, 0);
     }
 
-    function adjustContrastDecrease(value) {
+    function contrastDecrease(value) {
         if (!originalImageData || value <= 0) return;
 
         //cópia
@@ -69,3 +69,17 @@ window.onload = function() {
         return Math.max(0, Math.min(255, value));
     }
 }
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const resultCanvas = document.getElementById('originalCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = resultCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_contrast.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
