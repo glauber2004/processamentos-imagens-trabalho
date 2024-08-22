@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f2c0f5;
+    background-color: rgb(32, 72, 16);
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(74, 194, 203, 0.301);
     transition: transform 0.2s ease;
 }
 
@@ -51,7 +51,12 @@ body {
 }
 
 #week5 {
-    background-color:black;
+    background-color:purple;
+    color: white;
+}
+
+#week6 {
+    background-color: black;
     color: white;
 }
 
