@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE Imagem</title>
+</head>
+<body>
+    <input type="file" id="imageLoader"/>
+    <img id="imageDisplay"/>
+
+
+    <script>
+        document.getElementById('imageLoader').addEventListener('change', function(event) {
+            let reader = new FileReader();
+            
+            reader.onload = function(e) {
+                let imageDisplay = document.getElementById('imageDisplay');
+                imageDisplay.src = e.target.result;
+                imageDisplay.style.display = 'block'; // Exibe a imagem
+            };
+            
+            // Verifica se um arquivo foi selecionado
+            if (event.target.files && event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        });
+    </script>
+</body>
+</html>
