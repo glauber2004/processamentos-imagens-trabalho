@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diferenças</title>
+    <title>Diferença Imagens</title>
+    <link rel="stylesheet" href="week6.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Diferença entre Duas Imagens</h1>
-        <!-- Carregar a imagem-->
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-        <!-- Tratamento da imagem-->
-        <div class="canvas-image">
-            <canvas id="originalCanvas" class="canvas"></canvas>
-        </div>
+    <!-- Carregar as imagens-->
+    <h2>Diferença entre Duas Imagens</h2>
+        <input type="file" id="image1" accept="image/*">
+        <input type="file" id="image2" accept="image/*">
+    <!-- Mostrar as imagens escolhidas-->
+    <div id="images-container">
+        <h3>Imagens Carregadas:</h3>
+        <img id="displayImage1" alt="Image 1">
+        <img id="displayImage2" alt="Image 2">
     </div>
+    <!-- Botões para somar e subtrair-->
+    <button onclick="subtractImages()">Subtrair Imagens (1 - 2)</button>
+    <button onclick="subtractImages2()">Subtrair Imagens (2 - 1)</button>
+    <button onclick="sumImages()">Somar Resultados</button>
+    <canvas id="resultC"></canvas>
+    <canvas id="resultD"></canvas>
+    <canvas id="resultE"></canvas>
+    <!-- Botão para baixar a nova imagem-->
+    <button id="downloadButton">Baixar Imagem</button>
     <!-- Voltar a tela inicial-->
     <div class="start" id="button-start">
         <a href="/processamentos-imagens-trabalho/index.html">
             <h2>Voltar ao Início</h2>
         </a>
     </div>
-    <script src="week5.js"></script>
+<script src="week6.js"></script>
 </body>
 </html>
