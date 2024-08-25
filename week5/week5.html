@@ -12,9 +12,13 @@
         <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
         <!-- Tratamento da imagem-->
         <div class="canvas-image">
-            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="imgOrigin" class="canvas"></canvas>
         </div>
+        <button id="invertButtonHorizontally">Inverter Horizontal</button>
+        <button id="invertButtonVertically">Inverter Vertical</button>
     </div>
+    <!-- Botão para baixar a nova imagem-->
+    <button id="downloadButton">Baixar Imagem</button>
     <!-- Voltar a tela inicial-->
     <div class="start" id="button-start">
         <a href="/processamentos-imagens-trabalho/index.html">
