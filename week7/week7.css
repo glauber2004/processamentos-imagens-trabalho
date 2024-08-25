@@ -6,26 +6,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(32, 72, 16);
+    background-color: #f2c0f5;
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
-    max-width: 1000px;
 }
 
 .card {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(74, 194, 203, 0.301);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 }
 
@@ -33,43 +30,18 @@ body {
     transform: scale(1.05);
 }
 
-#week1 {
+#blending {
     background-color: rgb(23, 208, 23);
     color: white;
 }
 
-#week2 {
+#media {
     background-color: blue;
     color: white;
 }
 
-#week3 {
-    background-color: red;
-    color: white;
-}
-
-#week4 {
-    background-color: yellow;
-    color: white;
-}
-
-#week5 {
-    background-color: purple;
-    color: white;
-}
-
-#week6 {
-    background-color: coral;
-    color: white;
-}
-
-#week7 {
-    background-color: aqua;
-    color: white;
-}
-
-#week8 {
-    background-color: brown;
+#index {
+    background-color: black;
     color: white;
 }
 
