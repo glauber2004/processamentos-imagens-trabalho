@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Média de Duas Imagens</title>
 </head>
 <body>
+    <!-- Carregar as imagens-->
+    <h2>Média de Duas Imagens</h2>
+        <input type="file" id="image1" accept="image/*">
+        <input type="file" id="image2" accept="image/*">
+    <!-- Mostrar as imagens escolhidas-->
+    <div id="images-container">
+        <h3>Imagens Carregadas:</h3>
+        <img id="displayImage1" alt="Image 1">
+        <img id="displayImage2" alt="Image 2">
+    </div>
+    <!-- Botões para somar e subtrair-->
+    <button onclick="mediaImages()">Média das Imagens</button>
+    <canvas id="resultCanvas"></canvas>
+    <!-- Botão para baixar a nova imagem-->
+    <button id="downloadButton">Baixar Imagem</button>
     <!-- Voltar a tela inicial-->
     <div class="start" id="button-start">
         <a href="/processamentos-imagens-trabalho/week7/week7.html">
             <h2>Voltar</h2>
         </a>
     </div>
+    <script src="media.js"></script>
 </body>
 </html>
