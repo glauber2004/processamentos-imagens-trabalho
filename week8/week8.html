@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESERVA</title>
+    <title>Página Inicial</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/png/A.png">
+    <link rel="stylesheet" href="week8.css">
 </head>
 <body>
     <div class="container">
-        <h1>RESERVA DE CARREGAMENTO DE IMAGEM</h1>
-        <!-- Carregar a imagem-->
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-        <!-- Tratamento da imagem-->
-        <div class="canvas-image">
-            <canvas id="originalCanvas" class="canvas"></canvas>
+        <div class="card" id="bin">
+            <a href="/processamentos-imagens-trabalho/week8/convert-bin/bin.html">
+                <h2>Converter em Binário</h2>
+            </a>
+        </div>
+        <div class="card" id="not">
+            <a href="/processamentos-imagens-trabalho/week8/port-not/not.html">
+                <h2>Porta NOT</h2>
+            </a>
+        </div>
+        <div class="card" id="others">
+            <a href="/processamentos-imagens-trabalho/week8/port-others/others.html">
+                <h2>Outras Portas</h2>
+            </a>
+        </div>
+        <div class="card" id="index">
+            <a href="/processamentos-imagens-trabalho/index.html">
+                <h2>VOLTAR</h2>
+            </a>
         </div>
     </div>
-    <!-- Voltar a tela inicial-->
-    <div class="start" id="button-start">
-        <a href="/processamentos-imagens-trabalho/index.html">
-            <h2>Voltar ao Início</h2>
-        </a>
-    </div>
-    <script src="week5.js"></script>
 </body>
 </html>
