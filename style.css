@@ -34,7 +34,7 @@ body {
 }
 
 #week1 {
-    background-color: rgb(23, 208, 23);
+    background-color: Red;
     color: white;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 #week3 {
-    background-color: red;
+    background-color: green;
     color: white;
 }
 
@@ -59,17 +59,22 @@ body {
 }
 
 #week6 {
-    background-color: coral;
+    background-color: orange;
     color: white;
 }
 
 #week7 {
-    background-color: aqua;
+    background-color: pink;
     color: white;
 }
 
 #week8 {
     background-color: brown;
+    color: white;
+}
+
+#week9 {
+    background-color:gray;
     color: white;
 }
 
