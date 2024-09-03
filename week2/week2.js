@@ -60,7 +60,7 @@ function downloadImage() {
 
     //converter canvas para URL
     downloadLink.href = grayCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'escala_de_cinza.jpg';
+    downloadLink.download = 'image_gray_scale.jpg';
     downloadLink.click();
 }
 

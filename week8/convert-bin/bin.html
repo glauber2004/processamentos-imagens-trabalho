@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Converter em Binário</title>
+    <link rel="stylesheet" href="bin.css">
 </head>
 <body>
-    <p>BINARIO</p>
+    <div class="container">
+        <h1>Conversão de Imagem para Escala de Cinza</h1>
+        <!-- Carregar a imagem -->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <!-- Tratamento da imagem -->
+        <canvas id="originalCanvas" class="canvas"></canvas>
+        <canvas id="grayCanvas" class="canvas"></canvas>
+        
+        <input type="number" id="binValue" min="0" max="255">
+        <button onclick="convertBin()" class="convert-button">Converter Binário</button>
+        <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+    </div>
     <div class="start" id="button-start">
         <a href="/processamentos-imagens-trabalho/week8/week8.html">
             <h2>Voltar</h2>
         </a>
     </div>
+    <script src="bin.js"></script>
 </body>
 </html>
