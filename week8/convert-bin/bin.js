@@ -42,8 +42,9 @@ window.onload = function() {
 
                 // Calcula o valor da escala de cinza
                 let gray = (r+g+b)/3;
-                let binaryValue = gray < binValue ? 0 : 255;
-
+                let binaryValue = (gray < binValue) ? 0 : 255;
+                
+    
                 // Define os valores R, G, B para o valor de cinza
                 pixels[index] = pixels[index + 1] = pixels[index + 2] = binaryValue;
             }
