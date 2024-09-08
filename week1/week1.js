@@ -27,7 +27,7 @@ function convertRGBec() {
         return;
     }
 
-    let grayscale = 0.299 * r + 0.587 * g + 0.114 * b;
+    let grayscale = (r + g + b)/3;
 
     document.getElementById('resultGrayscale').innerText = `Escala Cinza: ${grayscale.toFixed(2)}`;
 }

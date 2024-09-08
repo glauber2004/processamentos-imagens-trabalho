@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f2c0f5;
+    background-color: #E0F7FA;
 }
 
 .container {
@@ -17,6 +17,7 @@ body {
 .card {
     width: 200px;
     height: 200px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
