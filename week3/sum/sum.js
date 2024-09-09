@@ -47,11 +47,6 @@ function loadImageAndLogRGB(imageFile, label, displayId) {
 
 //função somar
 function sumImages() {
-    if (!image1Data || !image2Data) {
-        console.log("Imagens não carregadas corretamente.");
-        return;
-    }
-
     // array pra manter valores (0 até 255)
     const summedData = new Uint8ClampedArray(image1Data.length);
 

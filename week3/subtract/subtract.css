@@ -74,6 +74,7 @@ button:hover, .button:hover {
     background-color: #2980b9;
 }
 
+/* botão de voltar */
 .back-button {
     background-color: white;
     color: #3498db;
@@ -86,11 +87,11 @@ button:hover, .button:hover {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s, color 0.3s;
-}
 
-.back-button:hover {
-    color: white;
-    background-color: #3498db;
+    &:hover{
+        color: white;
+        background-color: #3498db;
+    }
 }
 
 #resultCanvas {

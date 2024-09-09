@@ -9,15 +9,15 @@ body {
     background-color: #E0F7FA;
 }
 
-.container {
+main {
     display: flex;
     gap: 20px;
 }
 
 .card {
-    width: 200px;
-    height: 200px;
-    font-size: 30px;
+    width: 150px;
+    height: 150px;
+    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,19 +31,21 @@ body {
     transform: scale(1.05);
 }
 
-#sum {
-    background-color: rgb(23, 208, 23);
+#sum, #subtract {
+    background-color: #3498db;
     color: white;
-}
-
-#subtract {
-    background-color: blue;
-    color: white;
+    cursor: pointer;
 }
 
 #index {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: #3498db;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #3498db;
+        color: white;
+    }
 }
 
 a {

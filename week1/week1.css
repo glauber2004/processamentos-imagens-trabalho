@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-.convert {
+main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -53,8 +53,7 @@ body {
     outline: none;
 }
 
-.buttons button,
-.start-link {
+.buttons button{
     width: 100%;
     padding: 12px;
     font-size: 16px;
@@ -67,20 +66,9 @@ body {
     margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
-}
 
-.buttons button:hover,
-.start-link:hover {
-    background-color: #2980b9;
-}
-
-.buttons a{
-    background-color: white;
-    color: #3498db;
-    border: 1px solid #3498db;
     &:hover{
-        color: white;
-        background-color: #3498db;
+        background-color: #2980b9;
     }
 }
 
@@ -98,4 +86,24 @@ h2 {
     margin-bottom: 20px;
     color: #2c3e50;
     width: 100%;
+}
+
+/* botão de voltar */
+.back-button {
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover{
+        color: white;
+        background-color: #3498db;
+    }
 }

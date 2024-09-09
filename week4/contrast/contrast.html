@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contraste</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
     <link rel="stylesheet" href="contrast.css">
 </head>
 <body>
-    <div class="container">
+    <main>
         <h1>Alterar Contraste da Imagem</h1>
         <!-- Carregar a imagem-->
         <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
@@ -15,20 +16,19 @@
         <div class="canvas-image">
             <canvas id="originalCanvas" class="canvas"></canvas>
         </div>
+        <!-- Controles de Contraste -->
         <div class="controls">
-            <button id="increaseContrast">Aumentar Contraste</button>
-            <button id="decreaseContrast">Diminuir Contraste</button>
-            <input type="number" id="contrastValue" min="0" max="10">
+            <input type="number" id="contrastValue" min="0" max="10" placeholder="Valor">
+            <div class="button-group">
+                <button id="increaseContrast">Aumentar Contraste</button>
+                <button id="decreaseContrast">Diminuir Contraste</button>
+            </div>
+            <!-- Botão para baixar a nova imagem-->
+            <button id="downloadButton">Baixar Imagem</button>
+            <!-- Voltar a tela inicial-->
+            <a href="/processamentos-imagens-trabalho/week4/week4.html" class="button back-button">Voltar ao Início</a>
         </div>
-        <!-- Botão para baixar a nova imagem-->
-        <button id="downloadButton">Baixar Imagem</button>
-    </div>
-    <!-- Voltar a tela inicial-->
-    <div class="start" id="button-start">
-        <a href="/processamentos-imagens-trabalho/week4/week4.html">
-            <h2>Voltar</h2>
-        </a>
-    </div>
+    </main> 
     <script src="contrast.js"></script>
 </body>
 </html>
