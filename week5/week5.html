@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inverter Imagem</title>
+    <link rel="icon" type="image/png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week5.css">
 </head>
 <body>
-    <div class="container">
+    <main>
         <h1>Inverter Imagem</h1>
         <!-- Carregar a imagem-->
         <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
@@ -14,17 +16,14 @@
         <div class="canvas-image">
             <canvas id="imgOrigin" class="canvas"></canvas>
         </div>
-        <button id="invertButtonHorizontally">Inverter Horizontal</button>
-        <button id="invertButtonVertically">Inverter Vertical</button>
-    </div>
-    <!-- Botão para baixar a nova imagem-->
-    <button id="downloadButton">Baixar Imagem</button>
-    <!-- Voltar a tela inicial-->
-    <div class="start" id="button-start">
-        <a href="/processamentos-imagens-trabalho/index.html">
-            <h2>Voltar ao Início</h2>
-        </a>
-    </div>
+            <button id="invertButtonHorizontally">Inverter Horizontal</button>
+            <button id="invertButtonVertically">Inverter Vertical</button>
+        <!-- Botão para baixar a nova imagem-->
+        <button id="downloadButton">Baixar Imagem</button>
+        <!-- Voltar a tela inicial-->
+        <a href="/processamentos-imagens-trabalho/index.html" class="back-button">Voltar ao Início</a>
+    </main>
+        
     <script src="week5.js"></script>
 </body>
 </html>
