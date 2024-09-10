@@ -35,6 +35,10 @@ h1 {
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #fafafa;
+
+    &:hover{
+        border-color: #3498db;
+    }
 }
 
 /* área das imagens */

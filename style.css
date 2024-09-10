@@ -33,18 +33,13 @@ body {
     transform: scale(1.05);
 }
 
-#week1, #week2, #week3, #week4, #week5 {
+#week1, #week2, #week3, #week4, #week5, #week7 {
     background-color: #3498db;
     color: white;
 }
 
 #week6 {
     background-color:green;
-    color: white;
-}
-
-#week7 {
-    background-color:blue;
     color: white;
 }
 
