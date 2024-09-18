@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brilho</title>
+    <link rel="icon" type="image/png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="brightness.css">
+</head>
+<body>
+    <main>
+        <h1>Alterar Brilho da Imagem</h1>
+        <!-- Carregar a imagem -->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <!-- Tratamento da imagem -->
+        <div class="canvas-image">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+        </div>
+        <!-- Controles de Brilho -->
+        <div class="controls">
+            <input type="number" id="brightnessValue" min="0" max="255" placeholder="Valor">
+            <div class="button-group">
+                <button id="increaseBrightness">Aumentar Brilho</button>
+                <button id="decreaseBrightness">Diminuir Brilho</button>
+            </div>
+            <!-- Botão para baixar a nova imagem-->
+            <button id="downloadButton" class="convert-button">Baixar Imagem</button>
+            <!-- Voltar a tela inicial-->
+            <a href="/processamentos-imagens-trabalho/part-1/week4/week4.html" class="back-button">Voltar ao Início</a>
+        </div>
+    </main>
+    <script src="brightness.js"></script>
+</body>
+</html>

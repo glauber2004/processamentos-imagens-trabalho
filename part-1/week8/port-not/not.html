@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porta NOT</title>
+    <link rel="stylesheet" href="not.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Porta Not</h1>
+        <!-- Carregar a imagem -->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <!-- Tratamento da imagem -->
+        <canvas id="originalCanvas" class="canvas"></canvas>
+        <canvas id="binCanvas" class="canvas"></canvas>
+        <button onclick="invertBin()" class="convert-button">Aplicar NOT</button>
+        <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+    </div>
+    <div class="start" id="button-start">
+        <a href="/processamentos-imagens-trabalho/part-1/week8/week8.html">
+            <h2>Voltar</h2>
+        </a>
+    </div>
+    <script src="not.js"></script>
+</body>
+</html>
