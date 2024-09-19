@@ -8,27 +8,36 @@
     <link rel="stylesheet" href="blending.css">
 </head>
 <body>
-    <!-- Carregar as imagens-->
-    <h2>Blending</h2>
-    <div class="file-inputs">
-        <input type="file" id="image1" accept="image/*">
-        <input type="file" id="image2" accept="image/*">
-    </div>
-    <!-- Mostrar as imagens escolhidas-->   
-    <div id="images-container">
-        <div class="images-row">
-            <img id="displayImage1" alt="Image 1">
-            <img id="displayImage2" alt="Image 2">
+    <main>
+        <!-- Carregar as imagens -->
+        <h2>Blending</h2>
+        <div class="file-inputs">
+            <input type="file" id="image1" accept="image/*">
+            <input type="file" id="image2" accept="image/*">
         </div>
-    </div>
-    <!-- Botões para somar e subtrair-->
-    <input type="number" id="blendingValue" min="0" max="1">
-    <button onclick="blending()">Blending</button>
-    <canvas id="resultCanvas"></canvas>
-    <!-- Botão para baixar a nova imagem-->
-    <button id="downloadButton">Baixar Imagem</button>
-    <!-- Voltar a tela inicial-->
-    <a href='/processamentos-imagens-trabalho/part-1/week7/week7.html'><button class="button back-button">Voltar ao Início</button></a>
+        <!-- Mostrar as imagens escolhidas -->
+        <div id="images-container">
+            <div class="images-row">
+                <img id="displayImage1" alt="Image 1">
+                <img id="displayImage2" alt="Image 2">
+            </div>
+        </div>
+        <!-- Canvas para mostrar o resultado -->
+        <canvas id="resultCanvas"></canvas>
+        <!-- Entrada para o valor de blending -->
+        <div class="input-container">
+            <label for="blendingValue">Valor de Blending (0 a 1): </label>
+            <input type="number" id="blendingValue" min="0" max="1" step="0.1">
+        </div>
+        <!-- Contêiner para os botões -->
+        <div class="button-container">
+            <button onclick="blending()">Blending</button>
+            <button id="downloadButton">Baixar Imagem</button>
+            <a href='/processamentos-imagens-trabalho/part-1/week7/week7.html' class="button back-button">Voltar ao Início</a>
+        </div>
+    </main>
+    
+    
     <script src="blending.js"></script>
 </body>
 </html>

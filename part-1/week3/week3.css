@@ -14,7 +14,7 @@ main {
     gap: 20px;
 }
 
-.card {
+button{
     width: 150px;
     height: 150px;
     font-size: 24px;
@@ -25,16 +25,13 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-#sum, #subtract {
     background-color: #3498db;
     color: white;
     cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 #index {

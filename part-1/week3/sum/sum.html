@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="sum.css">
 </head>
 <body>
-    <!-- Carregar as imagens -->
-    <h2>Subtrair Duas Imagens</h2>
+    <main>
+        <!-- Carregar as imagens -->
+    <h2>Somar Duas Imagens</h2>
     <div class="file-inputs">
     <input type="file" id="image1" accept="image/*">
     <input type="file" id="image2" accept="image/*">
@@ -21,14 +22,15 @@
             <img id="displayImage2" alt="Image 2">
         </div>
     </div>
-    <!-- Botões para somar e subtrair-->
-    <button onclick="sumImages()">Somar Imagens</button>
+    <!-- Canvas para mostrar o resultado -->
     <canvas id="resultCanvas"></canvas>
-    <!-- Botão para baixar a nova imagem-->
-    <button id="downloadButton">Baixar Imagem</button>
-    <!-- Voltar a tela inicial-->
-    <a href="/processamentos-imagens-trabalho/part-1/week3/week3.html" class="button back-button">Voltar ao Início</a>
-    
+    <!-- Contêiner para os botões -->
+    <div class="button-container">
+        <button onclick="sumImages()">Somar Imagens</button>
+        <button id="downloadButton">Baixar Imagem</button>
+        <a href="/processamentos-imagens-trabalho/part-1/week3/week3.html" class="button back-button">Voltar ao Início</a>
+    </div>
+    </main> 
 <script src="sum.js"></script>
 </body>
 </html>

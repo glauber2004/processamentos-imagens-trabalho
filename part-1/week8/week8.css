@@ -9,15 +9,12 @@ body {
     background-color:#E0F7FA;
 }
 
-.container {
+main {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
-    max-width: 1000px;
 }
 
-.card {
+button{
     width: 150px;
     height: 150px;
     display: flex;
@@ -27,30 +24,25 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(74, 194, 203, 0.301);
     transition: transform 0.2s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-#bin {
-    background-color: Red;
+    background-color:#3498db;
     color: white;
-}
+    cursor: pointer;
+    font-size: 24px;
 
-#not {
-    background-color: blue;
-    color: white;
-}
-
-#others {
-    background-color: green;
-    color: white;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 
 #index {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: #3498db;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #3498db;
+        color: white;
+    }
 }
 
 a {
