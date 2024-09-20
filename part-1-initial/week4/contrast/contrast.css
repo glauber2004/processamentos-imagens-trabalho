@@ -1,0 +1,141 @@
+/* Estilo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E3F2FD;  /* Azul suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo do main */
+main {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+}
+
+/* Título */
+h1 {
+    font-size: 26px;
+    color: #34495e;
+    margin-bottom: 30px;
+}
+
+/* Input para carregar a imagem */
+.file-input-container {
+    margin-bottom: 20px;
+}
+
+.file-input {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+
+    &:hover{
+        border-color: #3498db;
+    }
+}
+
+/* Exibição do canvas */
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.canvas {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s;
+}
+
+/* Controles */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Input de brilho */
+.contrast-input {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contrast-input label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #34495e;
+}
+
+#contrastValue {
+    padding: 10px;
+    width: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Grupo de botões em linha */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button,
+.back-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;  /* Remover o sublinhado do link */
+}
+
+button:hover,
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+/* Botão para baixar imagem */
+.convert-button {
+    background-color: #3498db;
+}
+
+.convert-button:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo específico para o botão de voltar */
+.back-button {
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+
+.back-button:hover {
+    background-color: #3498db;
+    color: white;
+}

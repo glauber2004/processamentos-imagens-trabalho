@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferença Imagens</title>
+    <link rel="icon" type="image/png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week6.css">
+</head>
+<body>
+    <main>
+        <!-- Título -->
+        <h2>Diferença entre Duas Imagens</h2>
+
+        <!-- Carregar as imagens -->
+        <div class="file-inputs">
+            <input type="file" id="image1" accept="image/*">
+            <input type="file" id="image2" accept="image/*">
+        </div>
+
+        <!-- Mostrar as imagens escolhidas -->
+        <div id="images-container">
+            <div class="images-row">
+                <img id="displayImage1">
+                <img id="displayImage2">
+            </div>
+        </div>
+
+        <!-- Botões de operações -->
+        <div class="button-group">
+            <button onclick="subtractImages()">Subtrair Imagens (1 - 2)</button>
+            <button onclick="subtractImages2()">Subtrair Imagens (2 - 1)</button>
+            <button onclick="sumImages()">Somar Resultados</button>
+        </div>
+
+        <!-- Canvas para o resultado -->
+        <div class="canvas-container">
+            <canvas id="resultC"></canvas>
+            <canvas id="resultD"></canvas>
+            <canvas id="resultE"></canvas>
+        </div>
+
+        <!-- Botão para baixar a nova imagem -->
+        <button id="downloadButton" class="download-button">Baixar Imagem</button>
+
+        <!-- Botão para voltar à tela inicial -->
+        <a href='/processamentos-imagens-trabalho/part-1-initial/index.html' class="back-button">Voltar ao Início</a>
+    </main>
+
+    <script src="week6.js"></script>
+</body>
+</html>

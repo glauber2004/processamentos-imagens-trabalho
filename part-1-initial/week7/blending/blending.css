@@ -1,0 +1,134 @@
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E0F7FA;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo do main container */
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+/* Título */
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 24px;
+}
+
+/* Inputs para carregar as imagens */
+.file-inputs input[type="file"] {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.file-inputs input[type="file"]:hover {
+    border-color: #3498db;
+}
+
+/* Contêiner para as imagens */
+#images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Linha das imagens */
+.images-row {
+    display: flex;
+    gap: 20px; /* Espaçamento entre as imagens */
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Estilo das imagens */
+#images-container img, #resultCanvas {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+/* Input para o valor de blending */
+.input-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #34495e;
+}
+
+#blendingValue {
+    padding: 10px;
+    width: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo dos botões */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 20px;
+}
+
+button, .button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+button:hover, .button:hover {
+    background-color: #2980b9;
+}
+
+/* Botão "Voltar ao Início" */
+.back-button {
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+    color: white;
+    background-color: #3498db;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portas AND OR e XOR</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="others.css">
+</head>
+<body> 
+    <main>
+        <!-- Carregar as imagens -->
+        <h2>Portas AND OR e XOR</h2>
+        <div class="file-inputs"></div>
+            <input type="file" id="image1" accept="image/*">
+            <input type="file" id="image2" accept="image/*">
+        </div>
+        <!-- Mostrar as imagens escolhidas -->
+        <div id="images-container">
+            <div class="images-row">
+                <img id="displayImage1">
+                <img id="displayImage2">
+            </div>
+        </div>
+        <!-- Canvas para a imagem resultante -->
+        <canvas id="resultCanvas"></canvas>
+        <!-- Botões para realizar as operações lógicas -->
+        <div class="button-container">
+            <button onclick="andImages()">AND</button>
+            <button onclick="orImages()">OR</button>
+            <button onclick="xorImages()">XOR</button>
+            <!-- Botão para baixar a nova imagem -->
+        <button id="downloadButton">Baixar Imagem</button>
+        <!-- Voltar à tela inicial -->
+        <a href="/processamentos-imagens-trabalho/part-1-initial/week8/week8.html" class="button back-button">Voltar ao Início</a>
+        </div>
+    </main>
+    
+    <script src="others.js"></script>
+</body>
+</html>
