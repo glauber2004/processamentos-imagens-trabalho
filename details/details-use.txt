@@ -1,0 +1,23 @@
+Resumo de tudo
+
+arq_test
+    Arquivo de teste
+
+details 
+    Arquivo para deixar os detalhes e saber os detalhes do projeto 
+
+images 
+    Todas imagens utilizadas para este projeto
+
+part-1-initial 
+    week1 - Conversões Numéricas (RGB, Escala de Cinza, CYMK, HSV)
+    week2 - Conversão de Imagem para Escala de Cinza
+    week3 - Soma e Subtração de duas imagens
+    week4 - Modificar brilho e contraste de imagens
+    week5 - Inverter imagem horizontalmente e verticalmente
+    week6 - Diferença entre imagens (Subtração A-B // B-A // Soma de resultados)
+    week7 - Blending e Média de imagens
+    week8 - imagem binária, portas NOT, AND, OR e XOR
+
+part-2-convolution
+    week9 - Equalização de histograma

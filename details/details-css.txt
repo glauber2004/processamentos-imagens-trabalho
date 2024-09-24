@@ -1,0 +1,17 @@
+Estilos de todas as páginas 
+
+Página Inicial 
+ - Cor de fundo: 
+ - Cor de Botões:
+
+
+Parte 1 - Inicial 
+  - Cor de fundo: #E0F7FA - Azul suave
+  - Botões: #3498db - azul "escuro"
+  - Troca de Cor de botões:  #2980b9 - azul levemente mais escuro que o outro
+
+
+Parte 2 - Convolução 
+  - Cor de fundo: #E0F7E9 - verde suave
+  - Botões: #2ecc71 - verde brilhante
+  - Troca de Cor de botões: #27ae60 - verde mais escuro
