@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week11.css">
+    <title>Filtro de Imagem com Convolução</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Carregue uma Imagem para Aplicar Filtros</h1>
+        <!-- Carregar a imagem -->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+
+        <!-- Canvas para a imagem original -->
+        <canvas id="originalCanvas" class="canvas"></canvas>
+
+        <!-- Botões para aplicar filtros -->
+        <div class="buttons">
+            <button onclick="applyConvolutionFilter('mean')">Filtro Média</button>
+            <button onclick="applyConvolutionFilter('max')">Filtro Máximo</button>
+            <button onclick="applyConvolutionFilter('min')">Filtro Mínimo</button>
+        </div>
+    </div>
+
+    <script src="week11.js"></script>
+</body>
+</html>

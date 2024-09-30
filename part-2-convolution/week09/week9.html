@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESERVA</title>
+    <title>Equalização de Histograma</title>
 </head>
 <body>
     <div class="container">
@@ -16,17 +16,17 @@
             <canvas id="originalCanvas" class="canvas"></canvas>
         </div>
 
+        <!-- Botão para aplicar a equalização -->
+        <button id="equalizeButton">Aplicar Equalização</button>
+
         <!-- Canvas para exibir a imagem equalizada -->
         <div class="canvas-image">
             <canvas id="equalizedCanvas" class="canvas"></canvas>
         </div>
     </div>
     <!-- Voltar a tela inicial-->
-    <div class="start" id="button-start">
-        <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html">
-            <h2>Voltar ao Início</h2>
-        </a>
-    </div>
+    <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html"><button>Voltar ao Início</button></a>
+    
     <script src="week9.js"></script>
 </body>
 </html>
