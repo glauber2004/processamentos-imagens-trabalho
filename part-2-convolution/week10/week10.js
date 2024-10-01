@@ -1,41 +1,70 @@
-const upload = document.getElementById('upload');
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+//função de carregamento quando a página estiver pronta
+window.onload = function() {
+    let originalCanvas = document.getElementById('originalCanvas');
+    let grayCanvas = document.getElementById('grayCanvas');
+    let originalContext = originalCanvas.getContext('2d');
+    let grayContext = grayCanvas.getContext('2d');
+    let imageLoader = document.getElementById('imageLoader');
 
-let image = new Image();
+    imageLoader.addEventListener('change', treatImage, false);
 
-// Carrega a imagem do upload
-upload.addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    const reader = new FileReader();
+    //função para ler a imagem fornecida
+    function treatImage(changeEvent) {
+        let reader = new FileReader(); // objeto para conseguir base64
+        reader.onload = function(event) {
+            let img = new Image();
+            img.onload = function() {
+                //ajusta o tamanho dos canvas para o tamanho da imagem
+                originalCanvas.width = grayCanvas.width = img.width;
+                originalCanvas.height = grayCanvas.height = img.height;
 
-    reader.onload = function(event) {
-        image.src = event.target.result;
-        image.onload = function() {
-            canvas.width = image.width;
-            canvas.height = image.height;
-            ctx.drawImage(image, 0, 0);
+                //desenha a imagem original no primeiro canvas
+                originalContext.drawImage(img, 0, 0);
+            }
+            img.src = event.target.result;
         }
+        reader.readAsDataURL(changeEvent.target.files[0]);
     }
 
-    reader.readAsDataURL(file);
-});
+    window.convertBin = function() {
+        // Obter os dados da imagem original
+        let imageData = originalContext.getImageData(0, 0, originalCanvas.width, originalCanvas.height);
+        let pixels = imageData.data;
+        const binValue = parseFloat(document.getElementById('binValue').value);
 
-function applyThreshold() {
-    const threshold = document.getElementById('threshold').value;
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = imageData.data;
+        // Loop através de todos os pixels
+        for (let y = 0; y < originalCanvas.height; y++) {
+            for (let x = 0; x < originalCanvas.width; x++) {
+                let index = (y * originalCanvas.width + x) * 4;
+                let r = pixels[index];     
+                let g = pixels[index + 1]; 
+                let b = pixels[index + 2]; 
 
-    for (let i = 0; i < data.length; i += 4) {
-        // Conversão para escala de cinza (media dos canais RGB)
-        const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                // Calcula o valor da escala de cinza
+                let gray = (r+g+b)/3;
+                let binaryValue = (gray < binValue) ? 0 : 255;
+                
+    
+                // Define os valores R, G, B para o valor de cinza
+                pixels[index] = pixels[index + 1] = pixels[index + 2] = binaryValue;
+            }
+        }
 
-        // Aplicação do threshold
-        const value = avg >= threshold ? 255 : 0;
-
-        data[i] = data[i + 1] = data[i + 2] = value; // Define RGB como preto ou branco
-    }
-
-    // Atualiza a imagem com o threshold aplicado
-    ctx.putImageData(imageData, 0, 0);
+        // Coloca os dados de volta no canvas de escala de cinza
+        grayContext.putImageData(imageData, 0, 0);
+    };
 }
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const grayCanvas = document.getElementById('grayCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = grayCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_bin.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
