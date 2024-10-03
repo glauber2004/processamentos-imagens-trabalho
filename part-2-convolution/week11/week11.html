@@ -8,22 +8,22 @@
 
 </head>
 <body>
-    <div class="container">
-        <h1>Carregue uma Imagem para Aplicar Filtros</h1>
-        <!-- Carregar a imagem -->
+    <main>
+        <h1>Convolução de Imagens</h1>
         <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-
-        <!-- Canvas para a imagem original -->
-        <canvas id="originalCanvas" class="canvas"></canvas>
-
-        <!-- Botões para aplicar filtros -->
-        <div class="buttons">
-            <button onclick="applyConvolutionFilter('mean')">Filtro Média</button>
-            <button onclick="applyConvolutionFilter('max')">Filtro Máximo</button>
-            <button onclick="applyConvolutionFilter('min')">Filtro Mínimo</button>
+        <div class="canvas-image">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="canvasMin" class="canvas"></canvas>
+            <canvas id="canvasMax" class="canvas"></canvas>
+            <canvas id="canvasMean" class="canvas"></canvas>
         </div>
-    </div>
-
+        <div class="names">
+            <p>Original</p>
+            <p>MIN</p>
+            <p>MAX</p>
+            <p>MEAN</p>
+        </div>
+    </main>
     <script src="week11.js"></script>
 </body>
 </html>

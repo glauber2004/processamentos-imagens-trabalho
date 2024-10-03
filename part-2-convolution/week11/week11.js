@@ -1,77 +1,85 @@
 window.onload = function() {
     let originalCanvas = document.getElementById('originalCanvas');
-    let originalContext = originalCanvas.getContext('2d');
+    let ctxOriginal = originalCanvas.getContext('2d');
     let imageLoader = document.getElementById('imageLoader');
+
+    let canvasMin = document.getElementById('canvasMin');
+    let ctxMin = canvasMin.getContext('2d');
+    
+    let canvasMax = document.getElementById('canvasMax');
+    let ctxMax = canvasMax.getContext('2d');
+    
+    let canvasMean = document.getElementById('canvasMean');
+    let ctxMean = canvasMean.getContext('2d');
 
     imageLoader.addEventListener('change', treatImage, false);
 
     function treatImage(changeEvent) {
-        let reader = new FileReader(); // objeto para conseguir base64
+        let reader = new FileReader(); // Objeto para conseguir base64
         reader.onload = function(event) {
             let img = new Image();
             img.onload = function() {
-                // ajusta o tamanho do canvas para o tamanho da imagem
-                originalCanvas.width = img.width;
-                originalCanvas.height = img.height;
+                // Ajusta o tamanho dos canvases para o tamanho da imagem
+                [originalCanvas, canvasMin, canvasMax, canvasMean].forEach(canvas => {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                });
 
-                // desenha a imagem original no canvas
-                originalContext.drawImage(img, 0, 0);
+                // Desenha a imagem original no primeiro canvas
+                ctxOriginal.drawImage(img, 0, 0);
+
+                // Aplica os filtros de mínimo, máximo e média
+                applyFilters(ctxOriginal.getImageData(0, 0, img.width, img.height), img.width, img.height);
             }
             img.src = event.target.result;
         }
         reader.readAsDataURL(changeEvent.target.files[0]);
     }
 
-    // Função para aplicar o filtro de convolução
-    function applyConvolutionFilter(type) {
-        let imageData = originalContext.getImageData(0, 0, originalCanvas.width, originalCanvas.height);
+    function applyFilters(imageData, width, height) {
         let pixels = imageData.data;
-        let width = originalCanvas.width;
-        let height = originalCanvas.height;
+        
+        let imageDataMin = ctxMin.createImageData(width, height);
+        let imageDataMax = ctxMax.createImageData(width, height);
+        let imageDataMean = ctxMean.createImageData(width, height);
 
-        let newImageData = originalContext.createImageData(imageData);
-        let newPixels = newImageData.data;
+        for (let i = 1; i < height - 1; i++) {
+            for (let j = 1; j < width - 1; j++) {
+                let index = (i * width + j) * 4; // Índice do pixel
 
-        let kernelSize = 3;
-        let halfKernel = Math.floor(kernelSize / 2);
+                // Coleta a máscara de 3x3 em torno do pixel atual
+                let mask = getMask(pixels, i, j, width);
 
-        for (let y = halfKernel; y < height - halfKernel; y++) {
-            for (let x = halfKernel; x < width - halfKernel; x++) {
-                let neighborhood = [];
+                // Calcula o valor mínimo, máximo e médio
+                let minVal = Math.min(...mask);
+                let maxVal = Math.max(...mask);
+                let meanVal = mask.reduce((a, b) => a + b, 0) / mask.length;
 
-                // Coleta a vizinhança 3x3
-                for (let ky = -halfKernel; ky <= halfKernel; ky++) {
-                    for (let kx = -halfKernel; kx <= halfKernel; kx++) {
-                        let pixelIndex = ((y + ky) * width + (x + kx)) * 4;
-                        let r = pixels[pixelIndex];
-                        let g = pixels[pixelIndex + 1];
-                        let b = pixels[pixelIndex + 2];
-                        let avg = (r + g + b) / 3; // Consideramos a média das três cores
-                        neighborhood.push(avg);
-                    }
-                }
+                // Atualiza os pixels da nova imagem
+                imageDataMin.data[index] = imageDataMin.data[index + 1] = imageDataMin.data[index + 2] = minVal;
+                imageDataMax.data[index] = imageDataMax.data[index + 1] = imageDataMax.data[index + 2] = maxVal;
+                imageDataMean.data[index] = imageDataMean.data[index + 1] = imageDataMean.data[index + 2] = meanVal;
 
-                // Aplica o filtro desejado
-                let newValue;
-                if (type === 'mean') {
-                    newValue = neighborhood.reduce((sum, val) => sum + val, 0) / neighborhood.length;
-                } else if (type === 'max') {
-                    newValue = Math.max(...neighborhood);
-                } else if (type === 'min') {
-                    newValue = Math.min(...neighborhood);
-                }
-
-                // Define o novo valor para o pixel (r, g, b iguais para efeito de escala de cinza)
-                let newPixelIndex = (y * width + x) * 4;
-                newPixels[newPixelIndex] = newPixels[newPixelIndex + 1] = newPixels[newPixelIndex + 2] = newValue;
-                newPixels[newPixelIndex + 3] = 255; // Mantém a opacidade
+                // Definir alpha como 255 (opaco)
+                imageDataMin.data[index + 3] = imageDataMax.data[index + 3] = imageDataMean.data[index + 3] = 255;
             }
         }
 
-        // Atualiza o canvas com os novos dados de pixels
-        originalContext.putImageData(newImageData, 0, 0); // Certifique-se de usar o método correto para atualizar o canvas
+        // Desenha as imagens resultantes nos canvases
+        ctxMin.putImageData(imageDataMin, 0, 0);
+        ctxMax.putImageData(imageDataMax, 0, 0);
+        ctxMean.putImageData(imageDataMean, 0, 0);
     }
 
-    // Expor a função globalmente para ser chamada pelos botões
-    window.applyConvolutionFilter = applyConvolutionFilter;
+    function getMask(pixels, row, col, width) {
+        let mask = [];
+        for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+                let index = ((row + i) * width + (col + j)) * 4;
+                // Pegue apenas um canal de cor (grayscale)
+                mask.push(pixels[index]);
+            }
+        }
+        return mask;
+    }
 }

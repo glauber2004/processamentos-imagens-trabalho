@@ -26,11 +26,11 @@ window.onload = function() {
         reader.readAsDataURL(changeEvent.target.files[0]);
     }
 
-    window.convertBin = function() {
+    window.thresholding = function() {
         // Obter os dados da imagem original
         let imageData = originalContext.getImageData(0, 0, originalCanvas.width, originalCanvas.height);
         let pixels = imageData.data;
-        const binValue = parseFloat(document.getElementById('binValue').value);
+        const thresholding = parseFloat(document.getElementById('thresholding').value);
 
         // Loop através de todos os pixels
         for (let y = 0; y < originalCanvas.height; y++) {
@@ -42,7 +42,7 @@ window.onload = function() {
 
                 // Calcula o valor da escala de cinza
                 let gray = (r+g+b)/3;
-                let binaryValue = (gray < binValue) ? 0 : 255;
+                let binaryValue = (gray < thresholding) ? 0 : 255;
                 
     
                 // Define os valores R, G, B para o valor de cinza
@@ -62,7 +62,7 @@ function downloadImage() {
 
     //converter canvas para URL
     downloadLink.href = grayCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'image_bin.jpg';
+    downloadLink.download = 'image_thresholding.jpg';
     downloadLink.click();
 }
 
