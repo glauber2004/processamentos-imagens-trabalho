@@ -45,15 +45,15 @@ window.onload = function() {
 
         for (let i = 1; i < height - 1; i++) {
             for (let j = 1; j < width - 1; j++) {
-                let index = (i * width + j) * 4; // Índice do pixel
+                let index = (i * width + j) * 4; 
 
-                // Coleta a máscara de 3x3 em torno do pixel atual
-                let mask = getMask(pixels, i, j, width);
+                // matriz 3x3 em torno do pixel atual
+                let headquarters = getheadquarters(pixels, i, j, width);
 
                 // Calcula o valor mínimo, máximo e médio
-                let minVal = Math.min(...mask);
-                let maxVal = Math.max(...mask);
-                let meanVal = mask.reduce((a, b) => a + b, 0) / mask.length;
+                let minVal = getMin(headquarters);
+                let maxVal = getMax(headquarters);
+                let meanVal = getMean(headquarters);
 
                 // Atualiza os pixels da nova imagem
                 imageDataMin.data[index] = imageDataMin.data[index + 1] = imageDataMin.data[index + 2] = minVal;
@@ -65,21 +65,51 @@ window.onload = function() {
             }
         }
 
-        // Desenha as imagens resultantes nos canvases
+        // Desenha as imagens resultantes nos canvas
         ctxMin.putImageData(imageDataMin, 0, 0);
         ctxMax.putImageData(imageDataMax, 0, 0);
         ctxMean.putImageData(imageDataMean, 0, 0);
     }
 
-    function getMask(pixels, row, col, width) {
-        let mask = [];
+    function getheadquarters(pixels, row, col, width) {
+        let headquarters = [];
         for (let i = -1; i <= 1; i++) {
             for (let j = -1; j <= 1; j++) {
                 let index = ((row + i) * width + (col + j)) * 4;
-                // Pegue apenas um canal de cor (grayscale)
-                mask.push(pixels[index]);
+                headquarters.push(pixels[index]);
             }
         }
-        return mask;
+        return headquarters;
+    }
+
+    // Função para calcular o mínimo
+    function getMin(headquarters) {
+        let minVal = Infinity;
+        for (let value of headquarters) {
+            if (value < minVal) {
+                minVal = value;
+            }
+        }
+        return minVal;
+    }
+
+    // Função para calcular o máximo
+    function getMax(headquarters) {
+        let maxVal = -Infinity;
+        for (let value of headquarters) {
+            if (value > maxVal) {
+                maxVal = value;
+            }
+        }
+        return maxVal;
+    }
+
+    // Função para calcular a média
+    function getMean(headquarters) {
+        let sum = 0;
+        for (let value of headquarters) {
+            sum += value;
+        }
+        return sum / headquarters.length;
     }
 }
