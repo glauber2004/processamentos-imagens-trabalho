@@ -1,26 +1,74 @@
-//função de carregamento da imagem
-window.onload = function() {
+window.onload = function () {
     let originalCanvas = document.getElementById('originalCanvas');
-    let originalContext = originalCanvas.getContext('2d');
+    let ctxOriginal = originalCanvas.getContext('2d');
+    let canvasResult = document.getElementById('canvasResult');
+    let ctxResult = canvasResult.getContext('2d');
     let imageLoader = document.getElementById('imageLoader');
+    let currentImageData;
 
     imageLoader.addEventListener('change', treatImage, false);
+    document.getElementById('conservativeFilterBtn').addEventListener('click', applyConservativeFilter);
 
-    //função para ler a imagem fornecida
     function treatImage(changeEvent) {
-        let reader = new FileReader(); // objeto para conseguir base64
-        reader.onload = function(event) {
+        let reader = new FileReader();
+        reader.onload = function (event) {
             let img = new Image();
-            img.onload = function() {
-                //ajusta o tamanho dos canvas para o tamanho da imagem
-                originalCanvas.width = img.width;
-                originalCanvas.height = img.height;
+            img.onload = function () {
+                [originalCanvas, canvasResult].forEach(canvas => {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                });
 
-                //desenha a imagem original no primeiro canvas
-                originalContext.drawImage(img, 0, 0);
-            }
+                ctxOriginal.drawImage(img, 0, 0);
+                currentImageData = ctxOriginal.getImageData(0, 0, img.width, img.height);
+            };
             img.src = event.target.result;
-        }
+        };
         reader.readAsDataURL(changeEvent.target.files[0]);
+    }
+
+    function applyConservativeFilter() {
+        if (!currentImageData) return;
+        let width = currentImageData.width;
+        let height = currentImageData.height;
+        let newImageData = ctxResult.createImageData(width, height);
+
+        for (let i = 1; i < height - 1; i++) {
+            for (let j = 1; j < width - 1; j++) {
+                let index = (i * width + j) * 4;
+                let neighbors = getHeadquarters(currentImageData.data, i, j, width);
+
+                // Aplicar suavização conservativa
+                newImageData.data[index] = newImageData.data[index + 1] = newImageData.data[index + 2] = applyConservativeSmoothing(neighbors, currentImageData.data[index]);
+                newImageData.data[index + 3] = 255;
+            }
+        }
+
+        ctxResult.putImageData(newImageData, 0, 0);
+    }
+
+    function getHeadquarters(pixels, row, col, width) {
+        let headquarters = [];
+        for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+                let index = ((row + i) * width + (col + j)) * 4;
+                headquarters.push(pixels[index]);
+            }
+        }
+        headquarters.splice(4, 1); // Remover o valor central
+        return headquarters;
+    }
+
+    function applyConservativeSmoothing(neighbors, centerValue) {
+        let minValue = Math.min(...neighbors);
+        let maxValue = Math.max(...neighbors);
+
+        if (centerValue < minValue) {
+            return minValue;
+        } else if (centerValue > maxValue) {
+            return maxValue;
+        } else {
+            return centerValue;
+        }
     }
 }

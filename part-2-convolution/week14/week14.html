@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESERVA</title>
+    <title>Filtro de Suavização Conservativa</title>
 </head>
 <body>
-    <div class="container">
-        <h1>RESERVA DE CARREGAMENTO DE IMAGEM</h1>
-        <!-- Carregar a imagem-->
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-        <!-- Tratamento da imagem-->
-        <div class="canvas-image">
-            <canvas id="originalCanvas" class="canvas"></canvas>
-        </div>
-    </div>
-    <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html"><button>Voltar ao Início</button></a>
+    <main>
+        <h1>Filtro: Suavização Conservativa</h1>
+    <input type="file" id="imageLoader" accept="image/*">
+    <canvas id="originalCanvas"></canvas>
+    <canvas id="canvasResult"></canvas>
+    <br>
+    <button id="conservativeFilterBtn">Aplicar Suavização Conservativa</button>
+        <!-- Voltar a tela inicial-->
+        <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html"><button>Voltar ao Início</button></a>
+    </main>
     <script src="week14.js"></script>
 </body>
 </html>
