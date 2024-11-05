@@ -46,8 +46,6 @@ window.onload = function() {
 
                 // Atualiza os pixels da nova imagem
                 imageDataMean.data[index] = imageDataMean.data[index + 1] = imageDataMean.data[index + 2] = medianVal;
-
-                // Definir alpha como 255 (opaco)
                 imageDataMean.data[index + 3] = 255;
             }
         }
@@ -71,7 +69,7 @@ window.onload = function() {
     function getMedian(headquarters) {
         // Ordena os valores do menor para o maior
         let order = headquarters.slice().sort((a, b) => a - b);
-        //return order[8];
-        return order[0];
+        const ord = parseFloat(document.getElementById('ord').value);
+        return order[ord];
     }
 }

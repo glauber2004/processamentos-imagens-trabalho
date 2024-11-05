@@ -27,30 +27,57 @@ window.onload = function () {
         reader.readAsDataURL(event.target.files[0]);
     }
 
+    function generateGaussianKernel(size, sigma) {
+        const kernel = [];
+        const center = Math.floor(size / 2);
+        let sum = 0;
+
+        for (let x = -center; x <= center; x++) {
+            const row = [];
+            for (let y = -center; y <= center; y++) {
+                const value = (1 / (2 * Math.PI * sigma ** 2)) * Math.exp(-(x ** 2 + y ** 2) / (2 * sigma ** 2));
+                row.push(value);
+                sum += value;
+            }
+            kernel.push(row);
+        }
+
+        // Normalizar o kernel
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                kernel[i][j] /= sum;
+            }
+        }
+        return kernel;
+    }
+
     function applyGaussianFilter() {
         if (!currentImageData) return;
+
+        const sigmaInput = document.getElementById('sigmaInput').value;
+        const sigma = parseFloat(sigmaInput);
+        
+        if (sigma < 0 || sigma > 1) {
+            alert("Por favor, insira um valor de sigma entre 0.0 e 1.0.");
+            return;
+        }
+
         const width = currentImageData.width;
         const height = currentImageData.height;
         const newImageData = ctxResult.createImageData(width, height);
 
-        const kernel = [
-            [1, 4, 6, 4, 1],
-            [4, 16, 24, 16, 4],
-            [6, 24, 36, 24, 6],
-            [4, 16, 24, 16, 4],
-            [1, 4, 6, 4, 1]
-        ]
-        const kernelSum = 256; // Soma dos pesos para normalização
+        const kernelSize = 5;
+        const kernel = generateGaussianKernel(kernelSize, sigma);
+        const offset = Math.floor(kernelSize / 2);
 
-        for (let i = 2; i < height - 2; i++) {
-            for (let j = 2; j < width - 2; j++) {
+        for (let i = offset; i < height - offset; i++) {
+            for (let j = offset; j < width - offset; j++) {
                 let red = 0, green = 0, blue = 0;
 
-                // Aplicação do kernel 5x5
-                for (let ki = -2; ki <= 2; ki++) {
-                    for (let kj = -2; kj <= 2; kj++) {
+                for (let ki = -offset; ki <= offset; ki++) {
+                    for (let kj = -offset; kj <= offset; kj++) {
                         const pixelIndex = ((i + ki) * width + (j + kj)) * 4;
-                        const weight = kernel[ki + 2][kj + 2];
+                        const weight = kernel[ki + offset][kj + offset];
 
                         red += currentImageData.data[pixelIndex] * weight;
                         green += currentImageData.data[pixelIndex + 1] * weight;
@@ -59,10 +86,10 @@ window.onload = function () {
                 }
 
                 const index = (i * width + j) * 4;
-                newImageData.data[index] = red / kernelSum;
-                newImageData.data[index + 1] = green / kernelSum;
-                newImageData.data[index + 2] = blue / kernelSum;
-                newImageData.data[index + 3] = 255; // Alpha (opaco)
+                newImageData.data[index] = red;
+                newImageData.data[index + 1] = green;
+                newImageData.data[index + 2] = blue;
+                newImageData.data[index + 3] = 255; 
             }
         }
         ctxResult.putImageData(newImageData, 0, 0);

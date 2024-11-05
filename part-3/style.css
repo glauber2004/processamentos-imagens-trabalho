@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:#fffbea;
+    background-color:#f7e0e0;
 }
 
 .container {
@@ -17,7 +17,7 @@ body {
     max-width: 1000px;
 }
 
-.card-1, .card-2, .card-3{
+.card {
     width: 150px;
     height: 150px;
     display: flex;
@@ -25,24 +25,27 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.301);
+    box-shadow: 0 4px 8px rgba(204, 46, 46, 0.301);
     transition: transform 0.2s ease;
-    background-color: #2ecc71;
+    background-color: #db3434;
     color: white;
     cursor: pointer;
     font-size: 24px;
 }
 
-.card-1:hover, .card-2:hover, .card-3:hover{
+.card:hover {
     transform: scale(1.05);
 }
 
-.card-1 {
-    background-color: #3498db;
-}
+#index {
+    background-color: white;
+    color: #db3434;
+    cursor: pointer;
 
-.card-3 {
-    background-color: #db3434;
+    &:hover{
+        background-color: #db3434;
+        color: white;
+    }
 }
 
 a {
