@@ -16,13 +16,10 @@ window.onload = function() {
         reader.onload = function(event) {
             let img = new Image();
             img.onload = function() {
-                // Ajusta o tamanho dos canvas para o tamanho da imagem
                 originalCanvas.width = img.width;
                 originalCanvas.height = img.height;
                 edgeCanvas.width = img.width;
                 edgeCanvas.height = img.height;
-
-                // Desenha a imagem original no canvas
                 originalContext.drawImage(img, 0, 0);
             };
             img.src = event.target.result;
@@ -30,27 +27,25 @@ window.onload = function() {
         reader.readAsDataURL(event.target.files[0]);
     }
 
-    // Função para aplicar a detecção de borda com o operador Prewitt
+    // Função para aplicar a detecção de bordas usando o operador Prewitt
     function applyPrewittEdgeDetection() {
         let width = originalCanvas.width;
         let height = originalCanvas.height;
         let imageData = originalContext.getImageData(0, 0, width, height);
         let data = imageData.data;
+        let edgeData = new Uint8ClampedArray(data.length);
 
-        // Máscaras de convolução Prewitt para direções x e y
-        const prewittX = [
+        // Máscaras Prewitt para direções x e y
+        const h1 = [
             [-1, 0, 1],
             [-1, 0, 1],
             [-1, 0, 1]
         ];
-
-        const prewittY = [
-            [-1, -1, -1],
+        const h2 = [
+            [1, 1, 1],
             [0, 0, 0],
-            [1, 1, 1]
+            [-1, -1, -1]
         ];
-
-        let edgeData = new Uint8ClampedArray(data.length);
 
         // Função auxiliar para obter o índice de um pixel no array de dados
         function getIndex(x, y) {
@@ -69,8 +64,8 @@ window.onload = function() {
                         let pixelIndex = getIndex(x + j, y + i);
                         let intensity = data[pixelIndex]; // apenas o canal vermelho
 
-                        gx += prewittX[i + 1][j + 1] * intensity;
-                        gy += prewittY[i + 1][j + 1] * intensity;
+                        gx += h1[i + 1][j + 1] * intensity;
+                        gy += h2[i + 1][j + 1] * intensity;
                     }
                 }
 
