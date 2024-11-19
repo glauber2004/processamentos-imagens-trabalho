@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESERVA</title>
+    <title>Sobel</title>
 </head>
 <body>
     <div class="container">
-        <h1>RESERVA DE CARREGAMENTO DE IMAGEM</h1>
-        <!-- Carregar a imagem-->
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-        <!-- Tratamento da imagem-->
+        <h1>Sobel</h1>
+        <!-- Carregar a imagem -->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
+        
+        <!-- Tratamento da imagem -->
         <div class="canvas-image">
             <canvas id="originalCanvas" class="canvas"></canvas>
+        </div>
+        
+        <!-- Botão para aplicar detecção de bordas -->
+        <button id="edgeButton" class="button">Detectar Bordas</button>
+        
+        <!-- Canvas para exibir a imagem com bordas detectadas -->
+        <div class="canvas-image">
+            <canvas id="edgeCanvas" class="canvas"></canvas>
         </div>
     </div>
     <a href="/processamentos-imagens-trabalho/part-3/index.html"><button>Voltar ao Início</button></a>
