@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESERVA</title>
+    <title>Fechamento</title>
 </head>
 <body>
     <div class="container">
-        <h1>RESERVA DE CARREGAMENTO DE IMAGEM</h1>
-        <!-- Carregar a imagem-->
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-        <!-- Tratamento da imagem-->
-        <div class="canvas-image">
-            <canvas id="originalCanvas" class="canvas"></canvas>
-        </div>
+        <h1>Elemento Estruturante Fechamento</h1>
+        <input type="file" id="imageLoader" accept="image/*">
+        <canvas id="originalCanvas"></canvas>
+        <canvas id="closedCanvas"></canvas>
+        <button id="closeButton">Aplicar Fechamento</button>
     </div>
     <a href="/processamentos-imagens-trabalho/part-3/index.html"><button>Voltar ao Início</button></a>
     <script src="week22.js"></script>
