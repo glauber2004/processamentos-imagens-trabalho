@@ -7,13 +7,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Elemento Estruturante Dilatação</h1>
-        <!-- Carregar a imagem-->
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
-        <!-- Tratamento da imagem-->
-        <div class="canvas-image">
-            <canvas id="originalCanvas" class="canvas"></canvas>
-        </div>
+        <h1>Elemento Estruturante Dilatação</h1> 
+        <input type="file" id="imageLoader" accept="image/*">
+
+    
+    <canvas id="originalCanvas"></canvas>
+    <canvas id="dilatedCanvas"></canvas>
+
+    
+    <button id="dilateButton">Aplicar Dilatação</button>
     </div>
     <a href="/processamentos-imagens-trabalho/part-3/index.html"><button>Voltar ao Início</button></a>
     <script src="week19.js"></script>
