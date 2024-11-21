@@ -73,3 +73,18 @@ window.onload = function() {
         equalizedContext.putImageData(new ImageData(data, width, height), 0, 0);
     }
 };
+
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const equalizedCanvas = document.getElementById('equalizedCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = equalizedCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_equalized.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);

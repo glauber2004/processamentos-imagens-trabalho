@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:#f7e0e0;
+    background-color:#F4ECF7;
 }
 
 .container {
@@ -25,9 +25,9 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(204, 46, 46, 0.301);
+    box-shadow: 0 4px 8px rgba(196, 46, 204, 0.301);
     transition: transform 0.2s ease;
-    background-color: #db3434;
+    background-color: #8e44ad;
     color: white;
     cursor: pointer;
     font-size: 24px;
@@ -39,11 +39,11 @@ body {
 
 #index {
     background-color: white;
-    color: #db3434;
+    color: #8e44ad;
     cursor: pointer;
 
     &:hover{
-        background-color: #db3434;
+        background-color: #8e44ad;
         color: white;
     }
 }

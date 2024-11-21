@@ -73,3 +73,18 @@ window.onload = function() {
         return order[ord];
     }
 }
+
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const canvasMean = document.getElementById('canvasMean');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = canvasMean.toDataURL('image/jpg');
+    downloadLink.download = 'image_mean.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);

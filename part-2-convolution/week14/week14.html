@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtro de Suavização Conservativa</title>
+    <title>Suavização Conservativa</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week14.css">
 </head>
 <body>
     <main>
-        <h1>Filtro: Suavização Conservativa</h1>
-    <input type="file" id="imageLoader" accept="image/*">
-    <canvas id="originalCanvas"></canvas>
-    <canvas id="canvasResult"></canvas>
-    <br>
-    <button id="conservativeFilterBtn">Aplicar Suavização Conservativa</button>
-        <!-- Voltar a tela inicial-->
-        <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html"><button>Voltar ao Início</button></a>
+        <h1>Suavização Conservativa</h1>
+        <!-- Carregar a imagem -->
+        <input type="file" id="imageLoader" accept="image/*" class="file-input">
+        
+        <!-- Área dos canvases -->
+        <div class="canvas-image">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="canvasResult" class="canvas"></canvas>
+        </div>
+
+        <!-- Botões -->
+        <div class="button-group">
+            <button id="conservativeFilterBtn" class="convert-button">Aplicar Suavização Conservativa</button>
+            <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+            <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html" class="button back-button">Voltar ao Início</a>
+        </div>
     </main>
     <script src="week14.js"></script>
 </body>

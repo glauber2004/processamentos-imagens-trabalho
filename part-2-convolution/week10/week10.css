@@ -21,11 +21,10 @@ main {
 
 h1 {
     font-size: 24px;
-    color: #27ae60;
+    color: #1e5631;
     margin-bottom: 20px;
 }
 
-/* Estilo para o input de arquivo */
 .file-input {
     display: block;
     margin: 0 auto 20px auto;
@@ -42,7 +41,6 @@ h1 {
     }
 }
 
-/* Contêiner para centralizar os canvas */
 .canvas-container {
     display: flex;
     justify-content: center;
@@ -50,7 +48,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Estilo para os canvas */
 .canvas {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -60,7 +57,6 @@ h1 {
     height: 300px;
 }
 
-/* Contêiner para o input de valor binário */
 .input-container {
     display: flex;
     justify-content: center;
@@ -80,7 +76,6 @@ h1 {
     border-radius: 5px;
 }
 
-/* Contêiner para os botões */
 .button-group {
     display: flex;
     justify-content: center;
@@ -88,7 +83,6 @@ h1 {
     margin-top: 20px;
 }
 
-/* Estilo para os botões */
 .convert-button,
 #downloadButton {
     padding: 10px 20px;
@@ -106,7 +100,6 @@ h1 {
     background-color: #27ae60;
 }
 
-/* Estilo para o botão de voltar */
 .back-button {
     background-color: white;
     color: #2ecc71 ;

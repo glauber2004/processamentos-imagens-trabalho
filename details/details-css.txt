@@ -9,13 +9,16 @@ Parte 1 - Inicial
   - Cor de fundo: #E0F7FA - Azul suave
   - Botões: #3498db - azul "escuro"
   - Troca de Cor de botões:  #2980b9 - azul mais escuro 
+  - Cor de texto: #2c3e50 - azul escuro
 
 Parte 2 - Convolução 
   - Cor de fundo: #E0F7E9 - verde suave
   - Botões: #2ecc71 - verde brilhante
   - Troca de Cor de botões: #27ae60 - verde mais escuro
+  - Cor de texto: #1e5631 - verde escuro
 
 Parte 3 - Passa Alta 
   - Cor de fundo: #F4ECF7 - roxo suave
   - Botões: #8e44ad - roxo vibrante
   - Troca de Cor de botões: #732d91 - roxo mais escuro
+  - Cor de texto: #4a235a - roxo escuro
