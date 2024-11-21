@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:#fffbea;
+    background-color:#F4F4F4;
 }
 
 .container {
@@ -42,7 +42,7 @@ body {
 }
 
 .card-3 {
-    background-color: #db3434;
+    background-color: #8e44ad;
 }
 
 a {
