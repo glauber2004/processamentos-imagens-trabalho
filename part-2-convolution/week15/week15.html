@@ -4,20 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaussiano</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week15.css">
 </head>
 <body>
     <main>
-        <h1>Filtro Gaussiano 5x5 com Cálculo Dinâmico</h1>
-        <input type="file" id="imageLoader" accept="image/*">
-        <canvas id="originalCanvas"></canvas>
-        <canvas id="canvasResult"></canvas>
-        <br>
-        <label for="sigmaInput">Valor de Sigma (0.0 - 1.0): </label>
-        <input type="number" id="sigmaInput" min="0" max="1" step="0.1">
-        <button id="gaussianFilterBtn">Aplicar Filtro Gaussiano</button>
-        <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html"><button>Voltar ao Início</button></a>
-    </main>
-    
+        <h1>Gaussiano 5x5 com Cálculo Dinâmico</h1>
+        <!-- Entrada de arquivo -->
+        <input type="file" id="imageLoader" accept="image/*" class="file-input" />
+        
+        <!-- Canvases -->
+        <div class="canvas-image">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="canvasResult" class="canvas"></canvas>
+        </div>
+        
+        <!-- Controle de Sigma -->
+        <div class="input-group">
+            <label for="sigmaInput">Valor de Sigma (0.0 - 1.0):</label>
+            <input type="number" id="sigmaInput" min="0" max="1" step="0.1" class="number-input" />
+        </div>
+        
+        <!-- Botões -->
+        <div class="button-group">
+            <button id="gaussianFilterBtn" class="convert-button">Aplicar Filtro Gaussiano</button>
+            <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+            <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html" class="button back-button">Voltar ao Início</a>
+        </div>
+    </main>   
     <script src="week15.js"></script>
 </body>
 </html>
