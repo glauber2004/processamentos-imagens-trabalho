@@ -116,13 +116,23 @@ window.onload = function() {
 
 //função para baixar a nova imagem 
 function downloadImage() {
-    const grayCanvas = document.getElementById('grayCanvas');
-    const downloadLink = document.createElement('a');
+    const canvasMin = document.getElementById('canvasMin');
+    const canvasMax = document.getElementById('canvasMax');
+    const canvasMean = document.getElementById('canvasMean');
+    const downloadLinkOne = document.createElement('a');
+    const downloadLinkTwo = document.createElement('a');
+    const downloadLinkThree = document.createElement('a');
 
     //converter canvas para URL
-    downloadLink.href = grayCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'image_thresholding.jpg';
-    downloadLink.click();
+    downloadLinkOne.href = canvasMin.toDataURL('image/jpg');
+    downloadLinkTwo.href = canvasMax.toDataURL('image/jpg');
+    downloadLinkThree.href = canvasMean.toDataURL('image/jpg');
+    downloadLinkOne.download = 'image_min.jpg';
+    downloadLinkTwo.download = 'image_max.jpg';
+    downloadLinkThree.download = 'image_mean.jpg';
+    downloadLinkOne.click();
+    downloadLinkTwo.click();
+    downloadLinkThree.click();
 }
 
 //botão de download 

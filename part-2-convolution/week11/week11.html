@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="week11.css">
-    <title>Filtro de Imagem com Convolução</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <title>Convolução de Imagens</title>
 
 </head>
 <body>
     <main>
         <h1>Convolução de Imagens</h1>
-        <input type="file" id="imageLoader" name="imageLoader" class="file-input"/>
+        <!-- Entrada de arquivo -->
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
+    
+        <!-- Área dos canvases -->
         <div class="canvas-image">
             <canvas id="originalCanvas" class="canvas"></canvas>
             <canvas id="canvasMin" class="canvas"></canvas>
             <canvas id="canvasMax" class="canvas"></canvas>
             <canvas id="canvasMean" class="canvas"></canvas>
         </div>
+    
+        <!-- Nomes dos canvases -->
         <div class="names">
             <p>Original</p>
             <p>MIN</p>
             <p>MAX</p>
             <p>MEAN</p>
         </div>
-        <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
-        <!-- Voltar a tela inicial-->
-        <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html"><button>Voltar ao Início</button></a>
+    
+        <!-- Botões -->
+        <div class="button-group">
+            <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagens</button>
+            <a href="/processamentos-imagens-trabalho/part-2-convolution/index.html" class="button back-button">Voltar ao Início</a>
+        </div>
     </main>
+    
     <script src="week11.js"></script>
 </body>
 </html>
