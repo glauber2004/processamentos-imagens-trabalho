@@ -9,7 +9,7 @@ body {
     background-color:#E0F7E9;
 }
 
-.container {
+main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
