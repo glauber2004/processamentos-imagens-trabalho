@@ -103,7 +103,7 @@ function downloadImage() {
 
     //converter canvas para URL
     downloadLink.href = canvasResult.toDataURL('image/jpg');
-    downloadLink.download = 'image_conservative.jpg';
+    downloadLink.download = 'image_gaussian.jpg';
     downloadLink.click();
 }
 
