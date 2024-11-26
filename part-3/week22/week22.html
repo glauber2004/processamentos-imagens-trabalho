@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fechamento</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week22.css">
 </head>
 <body>
-    <div class="container">
+    <main>
         <h1>Elemento Estruturante Fechamento</h1>
-        <input type="file" id="imageLoader" accept="image/*">
-        <canvas id="originalCanvas"></canvas>
-        <canvas id="closedCanvas"></canvas>
-        <button id="closeButton">Aplicar Fechamento</button>
-    </div>
-    <a href="/processamentos-imagens-trabalho/part-3/index.html"><button>Voltar ao Início</button></a>
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
+        <div class="canvas-container">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="closedCanvas" class="canvas"></canvas>
+        </div>
+        <button id="closeButton" class="convert-button">Aplicar Fechamento</button>
+        <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+        <a href="/processamentos-imagens-trabalho/part-3/index.html" class="back-button">Voltar ao Início</a>
+    </main>
     <script src="week22.js"></script>
 </body>
 </html>
