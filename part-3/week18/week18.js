@@ -79,3 +79,18 @@ window.onload = function() {
         edgeContext.putImageData(edgeImageData, 0, 0);
     }
 };
+
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const edgeCanvas = document.getElementById('edgeCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = edgeCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_laplacian.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
