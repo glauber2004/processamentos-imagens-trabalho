@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,12 @@
 <body>
     <main>
         <h1>Sobel</h1>
-        <!-- Carregar a imagem -->
         <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
-    
-        
         <div class="canvas-container">
             <canvas id="originalCanvas" class="canvas"></canvas>
             <canvas id="edgeCanvas" class="canvas"></canvas>
         </div>
-    
-        <!-- Botão para aplicar detecção de bordas -->
         <button id="edgeButton" class="convert-button">Detectar Bordas</button>
-    
-        <!-- Botão de download -->
         <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
         <a href="/processamentos-imagens-trabalho/part-3/index.html" class="back-button">Voltar ao Início</a>
     </main>

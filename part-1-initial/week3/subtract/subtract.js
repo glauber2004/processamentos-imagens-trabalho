@@ -75,12 +75,8 @@ function subtractImages() {
 function downloadImage() {
     const resultCanvas = document.getElementById('resultCanvas');
     const downloadLink = document.createElement('a');
-
-    //converter canvas para URL
     downloadLink.href = resultCanvas.toDataURL('image/jpg');
     downloadLink.download = 'image_subtract.jpg';
     downloadLink.click();
-}
-
-//botão de download 
+} 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

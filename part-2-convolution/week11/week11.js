@@ -122,8 +122,6 @@ function downloadImage() {
     const downloadLinkOne = document.createElement('a');
     const downloadLinkTwo = document.createElement('a');
     const downloadLinkThree = document.createElement('a');
-
-    //converter canvas para URL
     downloadLinkOne.href = canvasMin.toDataURL('image/jpg');
     downloadLinkTwo.href = canvasMax.toDataURL('image/jpg');
     downloadLinkThree.href = canvasMean.toDataURL('image/jpg');
@@ -133,7 +131,5 @@ function downloadImage() {
     downloadLinkOne.click();
     downloadLinkTwo.click();
     downloadLinkThree.click();
-}
-
-//botão de download 
+} 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

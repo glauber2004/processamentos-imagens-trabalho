@@ -77,12 +77,8 @@ window.onload = function() {
 function downloadImage() {
     const erodedCanvas = document.getElementById('erodedCanvas');
     const downloadLink = document.createElement('a');
-
-    //converter canvas para URL
     downloadLink.href = erodedCanvas.toDataURL('image/jpg');
     downloadLink.download = 'image_eroded.jpg';
     downloadLink.click();
-}
-
-//botão de download 
+} 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

@@ -1,5 +1,4 @@
 window.onload = function() {
-    // Obtém referências para os elementos canvas e botões do HTML
     const originalCanvas = document.getElementById('originalCanvas');
     const equalizedCanvas = document.getElementById('equalizedCanvas');
     const originalContext = originalCanvas.getContext('2d');
@@ -79,12 +78,8 @@ window.onload = function() {
 function downloadImage() {
     const equalizedCanvas = document.getElementById('equalizedCanvas');
     const downloadLink = document.createElement('a');
-
-    //converter canvas para URL
     downloadLink.href = equalizedCanvas.toDataURL('image/jpg');
     downloadLink.download = 'image_equalized.jpg';
     downloadLink.click();
 }
-
-//botão de download 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

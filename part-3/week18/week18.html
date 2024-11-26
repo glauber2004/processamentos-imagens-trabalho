@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +10,15 @@
 <body>
     <main>
         <h1>Laplaciano</h1>
-        <!-- Carregar a imagem -->
         <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
-    
-        <!-- Imagem original e bordas lado a lado -->
         <div class="canvas-container">
                 <canvas id="originalCanvas" class="canvas"></canvas>
                 <canvas id="edgeCanvas" class="canvas"></canvas>
         </div>
-    
-        <!-- Botões de ação -->
         <button id="edgeButton" class="convert-button">Aplicar Laplaciano</button>
         <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
         <a href="/processamentos-imagens-trabalho/part-3/index.html" class="back-button">Voltar ao Início</a>
     </main>
-      
     <script src="week18.js"></script>
 </body>
 </html>

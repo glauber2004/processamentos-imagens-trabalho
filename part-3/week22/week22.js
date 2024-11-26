@@ -125,12 +125,8 @@ window.onload = function() {
 function downloadImage() {
     const closedCanvas = document.getElementById('closedCanvas');
     const downloadLink = document.createElement('a');
-
-    //converter canvas para URL
     downloadLink.href = closedCanvas.toDataURL('image/jpg');
     downloadLink.download = 'image_closed.jpg';
     downloadLink.click();
 }
-
-//botão de download 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

@@ -59,12 +59,8 @@ window.onload = function() {
 function downloadImage() {
     const grayCanvas = document.getElementById('grayCanvas');
     const downloadLink = document.createElement('a');
-
-    //converter canvas para URL
     downloadLink.href = grayCanvas.toDataURL('image/jpg');
     downloadLink.download = 'image_thresholding.jpg';
     downloadLink.click();
-}
-
-//botão de download 
+} 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

@@ -79,12 +79,8 @@ window.onload = function() {
 function downloadImage() {
     const canvasMean = document.getElementById('canvasMean');
     const downloadLink = document.createElement('a');
-
-    //converter canvas para URL
     downloadLink.href = canvasMean.toDataURL('image/jpg');
     downloadLink.download = 'image_mean.jpg';
     downloadLink.click();
 }
-
-//botão de download 
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

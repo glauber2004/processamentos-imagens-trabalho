@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,10 @@
     <main>
         <h1>Prewitt</h1>
         <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
-    
-        <!-- Tratamento da imagem e bordas detectadas lado a lado -->
         <div class="canvas-container">
-            <div>
-                <canvas id="originalCanvas" class="canvas"></canvas>
-            </div>
-            <div>
-                <canvas id="edgeCanvas" class="canvas"></canvas>
-            </div>
-            
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="edgeCanvas" class="canvas"></canvas>
         </div>
-
         <button id="edgeButton" class="convert-button">Detectar Bordas</button>
         <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
         <a href="/processamentos-imagens-trabalho/part-3/index.html" class="back-button">Voltar ao Início</a>
