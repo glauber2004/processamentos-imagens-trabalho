@@ -89,3 +89,17 @@ window.onload = function() {
         return new ImageData(erodedData, width, height);
     }
 }
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const contourCanvas = document.getElementById('contourCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = contourCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_contour.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
