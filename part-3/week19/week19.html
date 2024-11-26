@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dilatação</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week19.css">
 </head>
 <body>
-    <div class="container">
+    <main>
         <h1>Elemento Estruturante Dilatação</h1> 
-        <input type="file" id="imageLoader" accept="image/*">
-
-    
-    <canvas id="originalCanvas"></canvas>
-    <canvas id="dilatedCanvas"></canvas>
-
-    
-    <button id="dilateButton">Aplicar Dilatação</button>
-    </div>
-    <a href="/processamentos-imagens-trabalho/part-3/index.html"><button>Voltar ao Início</button></a>
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
+        <div class="canvas-container">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="dilatedCanvas" class="canvas"></canvas>
+        </div>
+        <button id="dilateButton" class="convert-button">Aplicar Laplaciano</button>
+        <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+        <a href="/processamentos-imagens-trabalho/part-3/index.html" class="back-button">Voltar ao Início</a>
+    </main>
+        
     <script src="week19.js"></script>
 </body>
 </html>

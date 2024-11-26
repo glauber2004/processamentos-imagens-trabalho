@@ -71,3 +71,18 @@ window.onload = function() {
         dilatedContext.putImageData(new ImageData(dilatedData, originalCanvas.width, originalCanvas.height), 0, 0);
     }
 }
+
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const dilatedCanvas = document.getElementById('dilatedCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = dilatedCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_dilate.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
