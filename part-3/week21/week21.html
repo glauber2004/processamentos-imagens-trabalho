@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abertura</title>
+    <link rel="website icon" type="png" href="/processamentos-imagens-trabalho/images/G.png">
+    <link rel="stylesheet" href="week21.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Elemento Estruturante Abertura</h1>
-        <input type="file" id="imageLoader" accept="image/*">
-        <canvas id="originalCanvas"></canvas>
-        <canvas id="openedCanvas"></canvas>
-        <button id="openButton">Aplicar Abertura</button>
-    </div>
-    <a href="/processamentos-imagens-trabalho/part-3/index.html"><button>Voltar ao Início</button></a>
+    <main>
+        <h1>Elemento Estruturante Abertura</h1> 
+        <input type="file" id="imageLoader" name="imageLoader" class="file-input" />
+        <div class="canvas-container">
+            <canvas id="originalCanvas" class="canvas"></canvas>
+            <canvas id="openedCanvas" class="canvas"></canvas>
+        </div>
+        <button id="openButton" class="convert-button">Aplicar Abertura</button>
+        <button id="downloadButton" class="convert-button" name="download-button">Baixar Imagem</button>
+        <a href="/processamentos-imagens-trabalho/part-3/index.html" class="back-button">Voltar ao Início</a>
+    </main>
     <script src="week21.js"></script>
 </body>
 </html>

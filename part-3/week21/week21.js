@@ -119,3 +119,18 @@ window.onload = function() {
         return new ImageData(dilatedData, imageData.width, imageData.height);
     }
 }
+
+
+//função para baixar a nova imagem 
+function downloadImage() {
+    const openedCanvas = document.getElementById('openedCanvas');
+    const downloadLink = document.createElement('a');
+
+    //converter canvas para URL
+    downloadLink.href = openedCanvas.toDataURL('image/jpg');
+    downloadLink.download = 'image_open.jpg';
+    downloadLink.click();
+}
+
+//botão de download 
+document.getElementById('downloadButton').addEventListener('click', downloadImage);
