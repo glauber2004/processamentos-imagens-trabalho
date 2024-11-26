@@ -21,9 +21,6 @@ window.onload = function() {
 
                 // Desenha a imagem original no primeiro canvas
                 ctxOriginal.drawImage(img, 0, 0);
-
-                // Aplica os filtros dee mediana
-                applyFilters(ctxOriginal.getImageData(0, 0, img.width, img.height), img.width, img.height);
             }
             img.src = event.target.result;
         }
@@ -41,7 +38,7 @@ window.onload = function() {
                 // Matriz 3x3 em torno do pixel atual
                 let headquarters = getHeadquarters(pixels, i, j, width);
 
-                // Calcula a mediana
+                // Calcula a mediana com base na ordem
                 let medianVal = getMedian(headquarters);
 
                 // Atualiza os pixels da nova imagem
@@ -65,17 +62,33 @@ window.onload = function() {
         return headquarters;
     }
 
-    // Função para calcular a mediana
+    // Função para calcular a mediana de acordo com a ordem escolhida
     function getMedian(headquarters) {
-        // Ordena os valores do menor para o maior
         let order = headquarters.slice().sort((a, b) => a - b);
-        const ord = parseFloat(document.getElementById('ord').value);
+        const ord = parseInt(document.getElementById('ord').value) - 1; // Ajuste para o índice baseado em zero
         return order[ord];
     }
+
+    // Função para aplicar o filtro de mediana com a ordem escolhida
+    function applyOrder() {
+        const ord = parseInt(document.getElementById('ord').value);
+
+        // Verifica se a ordem está dentro do intervalo
+        if (ord < 1 || ord > 8) {
+            alert('Por favor, insira uma ordem entre 1 e 8.');
+            return;
+        }
+
+        // Obtém o contexto da imagem original e aplica o filtro com a nova ordem
+        const imageData = ctxOriginal.getImageData(0, 0, originalCanvas.width, originalCanvas.height);
+        applyFilters(imageData, originalCanvas.width, originalCanvas.height);
+    }
+
+    // Adiciona o evento ao botão "Aplicar Ordem"
+    document.querySelector('.convert-button').addEventListener('click', applyOrder);
 }
 
-
-//função para baixar a nova imagem 
+// Função para baixar a nova imagem 
 function downloadImage() {
     const canvasMean = document.getElementById('canvasMean');
     const downloadLink = document.createElement('a');

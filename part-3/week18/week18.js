@@ -62,7 +62,7 @@ window.onload = function() {
                     }
                 }
 
-                // Clampeia o valor para o intervalo 0-255
+                // valor para o intervalo 0-255
                 let clampedValue = Math.min(255, Math.max(0, laplacianValue + 128));
 
                 // Definir o valor de borda para o pixel de saída

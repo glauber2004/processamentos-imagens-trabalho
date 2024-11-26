@@ -41,13 +41,11 @@ window.onload = function() {
                 // Matriz 3x3 em torno do pixel atual
                 let headquarters = getHeadquarters(pixels, i, j, width);
 
-                // Calcula a mediana
+                //mediana
                 let medianVal = getMedian(headquarters);
 
                 // Atualiza os pixels da nova imagem
                 imageDataMean.data[index] = imageDataMean.data[index + 1] = imageDataMean.data[index + 2] = medianVal;
-
-                // Definir alpha como 255 (opaco)
                 imageDataMean.data[index + 3] = 255;
             }
         }
@@ -78,10 +76,10 @@ window.onload = function() {
 
 //função para baixar a nova imagem 
 function downloadImage() {
-    const grayCanvas = document.getElementById('grayCanvas');
+    const canvasMean = document.getElementById('canvasMean');
     const downloadLink = document.createElement('a');
-    downloadLink.href = grayCanvas.toDataURL('image/jpg');
-    downloadLink.download = 'image_thresholding.jpg';
+    downloadLink.href = canvasMean.toDataURL('image/jpg');
+    downloadLink.download = 'image_mean.jpg';
     downloadLink.click();
 }
 document.getElementById('downloadButton').addEventListener('click', downloadImage);

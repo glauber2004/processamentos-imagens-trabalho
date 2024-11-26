@@ -17,7 +17,6 @@ window.onload = function() {
         reader.onload = (e) => {
             const img = new Image(); // Cria um novo objeto de imagem
             img.onload = () => {
-                // Define a largura e altura dos dois canvas conforme a imagem
                 [originalCanvas, equalizedCanvas].forEach(canvas => {
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -43,17 +42,17 @@ window.onload = function() {
         
         // Constroi o histograma: conta quantos pixels possuem cada nível de brilho (0 a 255)
         for (let i = 0; i < data.length; i += 4) {
-            histogram[data[i]]++; // Usa o canal R (vermelho) para representar o brilho
+            histogram[data[i]]++; // canal brilho
         }
 
-        // Constroi a CDF: soma cumulativa dos valores do histograma
+        // constroi a CDF: soma cumulativa dos valores do histograma
         cdf[0] = histogram[0];
         for (let i = 1; i < 256; i++) {
             cdf[i] = cdf[i - 1] + histogram[i];
         }
 
         // Normaliza a CDF para mapear os valores de 0 a 255
-        const cdfMin = cdf.find(v => v !== 0); // Obtém o primeiro valor não nulo da CDF
+        const cdfMin = cdf.find(v => v !== 0);
         const totalPixels = (width * height); // Número total de pixels na imagem
 
         // Ajusta a CDF para usar como transformação de brilho
@@ -64,7 +63,6 @@ window.onload = function() {
         // Aplica a transformação de equalização de histograma nos dados da imagem
         for (let i = 0; i < data.length; i += 4) {
             const newBrightness = cdf[data[i]]; // Mapeia o brilho atual para o novo brilho
-            // Define o novo valor de brilho para os canais R, G e B
             data[i] = data[i + 1] = data[i + 2] = newBrightness;
         }
 
